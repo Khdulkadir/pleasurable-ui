@@ -50,3 +50,40 @@ app.get('/', (request, response) => {
       response.render('index', {posts, categories})
   })
 })
+
+/*** ARTIKEL ROUTE ***/
+
+app.get("/artikel/:slug", function (request, response) {
+  const slugdirectus = encodeURIComponent(request.params.slug);
+  Promise.all([
+    fetchJson(`https://redpers.nl/wp-json/wp/v2/posts/?slug=${request.params.slug}`),
+    fetchJson(`https://fdnd-agency.directus.app/items/redpers_shares?filter={"slug":"${slugdirectus}"}`)
+  ]).then(([articleData, likeData]) => {
+    console.log(likeData.data)
+    response.render("article", {
+      article: articleData,
+      like: likeData.data,
+    });
+  });
+});
+
+app.post('/artikel/:slug', (request, response) => {
+  fetchJson(`https://fdnd-agency.directus.app/items/redpers_shares?filter[slug][_eq]=${request.params.slug}`)
+    .then(({ data }) => {
+      return fetchJson(`https://fdnd-agency.directus.app/items/redpers_shares/${data[0]?.id ? data[0].id : ''}`, {
+        method: data[0]?.id ? 'PATCH' : 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          slug: request.params.slug,
+          shares: data.length > 0 ? data[0].shares + 1 : 1,
+        }),
+      });
+    })
+    .then(() => {
+      response.redirect(301, `/artikel/${request.params.slug}`);
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      response.status(500).send('Internal Server Error');
+    });
+});
