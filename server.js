@@ -123,6 +123,6 @@ app.get('/auteur/:slug', function (request, response) {
 app.get('/search', (request, response) => {
   const searchterm = request.query.q;
   fetchJson(`${postsUrl}?search=${searchterm}`).then((posts) => {
-      response.render('search', {posts, categories, searchterm})
+      response.render('search', {posts, categoriesData, searchterm})
   })
 })
