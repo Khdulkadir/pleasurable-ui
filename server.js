@@ -43,47 +43,52 @@ app.get('/', (request, response) => {
   const fetchRequests = [fetchJson(`${postsUrl}?per_page=4`)]; // de 4 meest recente posts
   
   categoriesData.forEach((category) => { // voeg voor elke category een extra fetch request toe
-      fetchRequests.push(fetchJson(`${postsUrl}?per_page=3&categories=${category.id}`)); // de 3 meest recente posts van elke categorie
-  });
+      fetchRequests.push(fetchJson(`${postsUrl}?per_page=3&categories=${category.id}`)) // de 3 meest recente posts van elke categorie
+  })
 
   Promise.all(fetchRequests).then(posts => {  // Posts is een array van arrays van posts.
-      response.render('index', {posts, categories})
+      response.render('index', {posts, categoriesData})
   })
 })
 
-/*** ARTIKEL ROUTE ***/
-
-app.get("/artikel/:slug", function (request, response) {
+//Artikel route
+app.get("/artikel/:slug", (request, response) => {
   const slugdirectus = encodeURIComponent(request.params.slug);
   Promise.all([
-    fetchJson(`https://redpers.nl/wp-json/wp/v2/posts/?slug=${request.params.slug}`),
-    fetchJson(`https://fdnd-agency.directus.app/items/redpers_shares?filter={"slug":"${slugdirectus}"}`)
+    fetchJson(`${postsUrl}?slug=${request.params.slug}`),
+    fetchJson(`${directusUrl}?filter={"slug":"${slugdirectus}"}`)
   ]).then(([articleData, likeData]) => {
-    console.log(likeData.data)
-    response.render("article", {
-      article: articleData,
-      like: likeData.data,
-    });
-  });
-});
+    response.render("article", {article: articleData, like: likeData.data,})
+  })
+})
 
 app.post('/artikel/:slug', (request, response) => {
-  fetchJson(`https://fdnd-agency.directus.app/items/redpers_shares?filter[slug][_eq]=${request.params.slug}`)
+  fetchJson(`${directusUrl}?filter[slug][_eq]=${request.params.slug}`)
     .then(({ data }) => {
-      return fetchJson(`https://fdnd-agency.directus.app/items/redpers_shares/${data[0]?.id ? data[0].id : ''}`, {
+      return fetchJson(`${directusUrl}${data[0]?.id ? data[0].id : ''}`, {
         method: data[0]?.id ? 'PATCH' : 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           slug: request.params.slug,
           shares: data.length > 0 ? data[0].shares + 1 : 1,
         }),
-      });
+      })
     })
     .then(() => {
-      response.redirect(301, `/artikel/${request.params.slug}`);
+      response.redirect(301, `/artikel/${request.params.slug}`)
     })
     .catch(error => {
-      console.error('Error:', error);
-      response.status(500).send('Internal Server Error');
-    });
-});
+      response.status(500).send('Internal Server Error')
+    })
+})
+
+//Categorie route
+app.get('/categorie/:slug', function (request, response) {
+  const category = categoriesData.find((category) => category.slug == request.params.slug);
+
+  Promise.all([fetchJson(postsUrl + '?categories=' + category.id + '&_fields=date,slug,title,yoast_head_json.og_image,jetpack_featured_media_url&per_page=20'), 
+    fetchJson(categoriesUrl + '/?slug=' + request.params.slug + '&_fields=name,yoast_head')]).then(([postData, category]) => {
+
+    response.render('category', {posts: postData, category: category, categories: categoriesData});
+  })
+})
