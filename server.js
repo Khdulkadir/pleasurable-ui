@@ -55,10 +55,21 @@ app.get('/', (request, response) => {
 app.get("/artikel/:slug", (request, response) => {
   const slugdirectus = encodeURIComponent(request.params.slug);
   Promise.all([
-    fetchJson(`${postsUrl}?slug=${request.params.slug}`),
-    fetchJson(`${directusUrl}?filter={"slug":"${slugdirectus}"}`)
-  ]).then(([articleData, likeData]) => {
-    response.render("article", {article: articleData, like: likeData.data,})
+    fetchJson(`${postsUrl}/?slug=${request.params.slug}&_fields=date,slug,title,author,content,excerpt,categories,yoast_head,yoast_head_json.author,yoast_head_json.twitter_misc,yoast_head_json.og_image`),
+    fetchJson(`${directusUrl}?filter={"slug":"${slugdirectus}"}`),
+    fetchJson(`${authorUrl}?_fields=id,slug,name,description,avatar_urls&per_page=100`),
+    fetchJson(`${categoriesUrl}?_fields=id,name,slug&per_page=100`)
+  ]).then(([articleData, likeData, authorData, categoryData]) => {
+
+    let filterCategorie = categoryData.filter(category => {
+      return category.id == articleData[0].categories[0]
+    })
+
+    let filterAuthor = authorData.filter(author =>{
+      return author.id == articleData[0].author
+    })
+
+    response.render("article", {article: articleData, like: likeData.data, categories: categoriesData, category: filterCategorie, author: filterAuthor})
   })
 })
 
@@ -86,9 +97,24 @@ app.post('/artikel/:slug', (request, response) => {
 app.get('/categorie/:slug', function (request, response) {
   const category = categoriesData.find((category) => category.slug == request.params.slug);
 
-  Promise.all([fetchJson(postsUrl + '?categories=' + category.id + '&_fields=date,slug,title,yoast_head_json.og_image,jetpack_featured_media_url&per_page=20'), 
-    fetchJson(categoriesUrl + '/?slug=' + request.params.slug + '&_fields=name,yoast_head')]).then(([postData, category]) => {
+  Promise.all([
+    fetchJson(`${postsUrl}?categories=${category.id}&_fields=date,slug,title,yoast_head_json.og_image,jetpack_featured_media_url&per_page=20`), 
+    fetchJson(`${categoriesUrl}/?slug=${request.params.slug}&_fields=name,yoast_head`)
+  ]).then(([postData, category]) => {
 
     response.render('category', {posts: postData, category: category, categories: categoriesData});
   })
 })
+
+//Auteur route
+app.get('/auteur/:slug', function (request, response) {
+  Promise.all([fetchJson(authorUrl + '?slug=' + request.params.slug), 
+    fetchJson(postsUrl + '?_fields=date,slug,title,author,yoast_head_json.twitter_misc,yoast_head_json.og_image,jetpack_featured_media_url&per_page=100')]).then(([authorData, postData]) => {
+
+      let filterPost = postData.filter(post =>{
+        return post.author == authorData[0].id
+      })
+
+      response.render('author', {author: authorData, posts: filterPost, categories: categoriesData })
+    })
+})  
