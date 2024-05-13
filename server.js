@@ -118,3 +118,11 @@ app.get('/auteur/:slug', function (request, response) {
       response.render('author', {author: authorData, posts: filterPost, categories: categoriesData })
     })
 })  
+
+// Search
+app.get('/search', (request, response) => {
+  const searchterm = request.query.q;
+  fetchJson(`${postsUrl}?search=${searchterm}`).then((posts) => {
+      response.render('search', {posts, categories, searchterm})
+  })
+})
