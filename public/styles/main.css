@@ -62,6 +62,7 @@ header {
   border-bottom: var(--border);
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 1.5rem 2rem;
   width: calc(100% - 4rem);
 
@@ -91,6 +92,11 @@ header {
   .logo {
       width: 150px;
       height: 35px;
+  }
+
+  .newsletter-search {
+    display: flex;
+    gap: 1rem;
   }
 }
 
@@ -142,6 +148,10 @@ header:has(.categories-nav.closed) .menu-button {
   .close-icon {
       display: none;
   }
+}
+
+.hidden {
+  display: none;
 }
 /* #endregion Header */
 
