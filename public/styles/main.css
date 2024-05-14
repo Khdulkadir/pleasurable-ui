@@ -170,6 +170,16 @@ header:has(.categories-nav.closed) .menu-button {
     display: block;
   }
 }
+.search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search-form input {
+  width: 30rem;
+  height: 2.5rem;
+  margin-bottom: 2rem;
+}
 /* #endregion Header */
 
 /* #region Media */
