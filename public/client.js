@@ -1,7 +1,7 @@
 const nav = document.querySelector("nav.categories-nav"),
 menuButton = document.querySelector(".menu-button"),
-searchForm = document.getElementById("search-form"),
-searchInput = document.getElementById("search-input"),
+searchForms = document.querySelectorAll(".search-form"),
+searchInputs = document.querySelectorAll(".search-input"),
 header2 = document.querySelector(".header2"),
 header3 = document.querySelector(".header3");
 
@@ -10,12 +10,15 @@ menuButton.addEventListener("click", () => {
     nav.classList.toggle("closed");
 })
 
-searchForm.addEventListener("submit", (event) => {
-    if (searchInput.classList.contains("hidden") || searchInput.value === "") {
-        event.preventDefault()
-        searchInput.classList.remove("hidden")
-        searchInput.focus()
-    }
+searchForms.forEach((searchForm, i) => {
+    searchForm.addEventListener("submit", (event) => {
+        const searchInput = searchInputs[i]
+        if (searchInput.classList.contains("hidden") || searchInput.value === "") {
+            event.preventDefault()
+            searchInput.classList.remove("hidden")
+            searchInput.focus()
+        }
+    })
 })
 
 // Code voor sticky header3 
