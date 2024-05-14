@@ -43,7 +43,6 @@ a{
 
 /* #region Header */
 header {
-  position: fixed;
   top: 0;
   width: 100%;
   background-color: var(--color-light-100);
@@ -106,6 +105,7 @@ header {
 }
 
 .header3 {
+  background-color: var(--color-light-100);
   .categories-nav {
       position: fixed;
       background-color: var(--color-light-100);
@@ -159,6 +159,10 @@ header:has(.categories-nav.closed) .menu-button {
 .hidden {
   display: none;
 }
+
+.fixed {
+  position: fixed;
+}
 /* #endregion Header */
 
 /* #region Media */
@@ -174,6 +178,10 @@ header:has(.categories-nav.closed) .menu-button {
 }
 
 @media only screen and (max-width: 1024px) {
+  header {
+    position: fixed;
+  }
+  
   .header2 {
     border-bottom: var(--border);
   }
@@ -181,7 +189,7 @@ header:has(.categories-nav.closed) .menu-button {
 
 @media only screen and (min-width: 1025px) {
   main {
-    margin-top: 13rem;
+    margin-top: 0;
   }
 
   header {

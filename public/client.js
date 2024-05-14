@@ -1,7 +1,9 @@
 const nav = document.querySelector("nav.categories-nav"),
 menuButton = document.querySelector(".menu-button"),
 searchForm = document.getElementById("search-form"),
-searchInput = document.getElementById("search-input");
+searchInput = document.getElementById("search-input"),
+header2 = document.querySelector(".header2"),
+header3 = document.querySelector(".header3");
 
 
 menuButton.addEventListener("click", () => {
@@ -15,3 +17,14 @@ searchForm.addEventListener("submit", (event) => {
         searchInput.focus()
     }
 })
+
+// Code voor sticky header3 
+const observer = new IntersectionObserver(([{isIntersecting}], _) => { //Dit gebeurd wanneer header2 het scherm binnenkomt of verlaat
+    if (isIntersecting) { // Als header2 zichtbaar wordt
+        header3.classList.remove("fixed") //Zet header3 op geen fixed
+    } else { //Als header2 weggaat
+        header3.classList.add("fixed") //Zet header3 op fixed
+    }
+})
+
+observer.observe(header2) // Kijk naar header2
