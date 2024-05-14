@@ -89,24 +89,15 @@ header {
   }
 
   .logo {
-      width: 16rem;
-      height: 4rem;
+      width: 150px;
+      height: 35px;
   }
 }
 
 .header3 {
-  .donate-and-newsletter {
-      display: flex;
-      flex-direction: column;
-      border: var(--border);
-      margin: 1.5rem;
-      padding: 1rem;
-      background-color: white;
-  }
-
   .categories-nav {
       position: fixed;
-      background-color: var(--background-color);
+      background-color: var(--color-light);
       top: calc(3rem + 43.4px);
       left: 0;
       width: 67vw;
@@ -130,7 +121,41 @@ header {
       transition: left 0.3s;
   }
 }
+
+.menu-button {
+  z-index: 1;
+
+  .menu-icon {
+      display: none;
+  }
+
+  .close-icon {
+      display: block;
+  }
+}
+
+header:has(.categories-nav.closed) .menu-button {
+  .menu-icon {
+      display: block;
+  }
+
+  .close-icon {
+      display: none;
+  }
+}
 /* #endregion Header */
+
+/* #region Media */
+@media only screen and (max-width: 768px) {
+  .header2 {
+    .newsletter {
+      display: none;
+    }
+    .search-text {
+      display: none;
+    }
+  }  
+}
 
 @media only screen and (min-width: 1025px) {
 
@@ -151,6 +176,11 @@ header {
           .date-and-tagline {
               display: block;
           }
+
+          .logo {
+            width: 16rem;
+            height: 4rem;
+        }
       }
 
       .header3 {
@@ -181,3 +211,4 @@ header {
           display: none;
       }
   }}
+  /* #endregion Media */
