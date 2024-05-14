@@ -10,10 +10,11 @@ menuButton.addEventListener("click", () => {
     nav.classList.toggle("closed");
 })
 
-searchForms.forEach((searchForm, i) => {
+//Code voor search form
+searchForms.forEach((searchForm, i) => { //Omdat er 2 search forms zijn doe ik ze in for each loop anders krijg je dubbele code
     searchForm.addEventListener("submit", (event) => {
-        const searchInput = searchInputs[i]
-        if (searchInput.classList.contains("hidden") || searchInput.value === "") {
+        const searchInput = searchInputs[i] //Iteratie van de loop
+        if (searchInput.classList.contains("hidden") || searchInput.value === "") { //Als search input hidden of leeg is
             event.preventDefault()
             searchInput.classList.remove("hidden")
             searchInput.focus()
