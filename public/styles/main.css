@@ -5,6 +5,10 @@
   padding: 0;
 }
 
+body {
+  background-color: var(--color-light-100);
+}
+
 :root{
   --color-dark: #000000;
   --color-dark-100: #818181;
@@ -34,7 +38,7 @@ a{
 }
 
 main {
-  margin-top: 13rem;
+  margin-top: 15rem;
 }
 
 /* #region Header */
@@ -42,19 +46,22 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: var(--color-light);
+  background-color: var(--color-light-100);
 }
 
 .header1 {
   display: none;
   background-color: black;
-  color: white;
   padding-right: 1rem;
+  height: 2.5rem;
 
   nav {
       display: flex;
       gap: 1rem;
-      justify-content: end;
+  }
+
+  a {
+    color: white;
   }
 }
 
@@ -103,7 +110,7 @@ header {
 .header3 {
   .categories-nav {
       position: fixed;
-      background-color: var(--color-light);
+      background-color: var(--color-light-100);
       top: calc(3rem + 43.4px);
       left: 0;
       width: 67vw;
@@ -176,7 +183,9 @@ header:has(.categories-nav.closed) .menu-button {
       
       .header1 {
           width: 100%;
-          display: block;
+          display: flex;
+          justify-content: end;
+          align-items: center;
       }
 
       .header2 {
