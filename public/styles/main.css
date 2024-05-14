@@ -32,13 +32,13 @@ body {
   --line-heigth: 1.5;
 }
 
+main {
+  margin-top: 6rem;
+}
+
 a{
   text-decoration: none;
   color: var(--color-dark);
-}
-
-main {
-  margin-top: 15rem;
 }
 
 /* #region Header */
@@ -66,13 +66,11 @@ header {
 }
 
 .header2 {
-  border-bottom: var(--border);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem 2rem;
-  width: calc(100% - 4rem);
-
+  
   button {
       all: unset;
       cursor: pointer;
@@ -118,12 +116,13 @@ header {
       transition: left 0.3s;
 
       .categories {
-          border: var(--border);
+          border-top: var(--border);
+          border-bottom: var(--border);
           display: flex;
           flex-direction: column;
           margin: 1rem;
           padding: 2rem;
-          gap: 1rem;
+          gap: 3rem;
           align-items: center;
           height: calc(100vh - 9rem - 43.4px);
       }
@@ -174,7 +173,16 @@ header:has(.categories-nav.closed) .menu-button {
   }  
 }
 
+@media only screen and (max-width: 1024px) {
+  .header2 {
+    border-bottom: var(--border);
+  }
+}
+
 @media only screen and (min-width: 1025px) {
+  main {
+    margin-top: 13rem;
+  }
 
   header {
       display: flex;
