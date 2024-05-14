@@ -40,7 +40,7 @@ const redpersUrl = 'https://redpers.nl/wp-json/wp/v2/',
 
 //Index route
 app.get('/', (request, response) => {
-  const fetchRequests = [fetchJson(`${postsUrl}?per_page=4`)]; // de 4 meest recente posts
+  const fetchRequests = [fetchJson(`${postsUrl}?per_page=4`)] // de 4 meest recente posts
   
   categoriesData.forEach((category) => { // voeg voor elke category een extra fetch request toe
       fetchRequests.push(fetchJson(`${postsUrl}?per_page=3&categories=${category.id}`)) // de 3 meest recente posts van elke categorie
@@ -53,7 +53,7 @@ app.get('/', (request, response) => {
 
 //Artikel route
 app.get("/artikel/:slug", (request, response) => {
-  const slugdirectus = encodeURIComponent(request.params.slug);
+  const slugdirectus = encodeURIComponent(request.params.slug)
   Promise.all([
     fetchJson(`${postsUrl}/?slug=${request.params.slug}&_fields=date,slug,title,author,content,excerpt,categories,yoast_head,yoast_head_json.author,yoast_head_json.twitter_misc,yoast_head_json.og_image`),
     fetchJson(`${directusUrl}?filter={"slug":"${slugdirectus}"}`),
@@ -95,7 +95,7 @@ app.post('/artikel/:slug', (request, response) => {
 
 //Categorie route
 app.get('/categorie/:slug', function (request, response) {
-  const category = categoriesData.find((category) => category.slug == request.params.slug);
+  const category = categoriesData.find((category) => category.slug == request.params.slug)
 
   Promise.all([
     fetchJson(`${postsUrl}?categories=${category.id}&_fields=date,slug,title,yoast_head_json.og_image,jetpack_featured_media_url&per_page=20`), 
@@ -121,7 +121,7 @@ app.get('/auteur/:slug', function (request, response) {
 
 // Search
 app.get('/search', (request, response) => {
-  const searchterm = request.query.q;
+  const searchterm = request.query.q
   fetchJson(`${postsUrl}?search=${searchterm}`).then((posts) => {
       response.render('search', {posts, categoriesData, searchterm})
   })
