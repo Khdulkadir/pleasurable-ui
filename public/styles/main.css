@@ -1,3 +1,10 @@
+*{
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+}
+
 :root{
   --color-dark: #000000;
   --color-dark-100: #818181;
@@ -8,5 +15,20 @@
   --accent-color3: #f2d930;
   --accent-color4: #f9cdc8;
 
+  --thumbnail-width: 100%;
+  --thumbnail-height: 200px;
+  --thumbnail-heightsm: 150px;
+
   --border: solid var(--color-dark) 1px;
+  --border-light: solid var(--color-light-100) 1px;
+  
+  --margin-center: 0 auto;
+
+  --line-length: 30em;
+  --line-heigth: 1.5;
+}
+
+a{
+  text-decoration: none;
+  color: var(--color-dark);
 }
