@@ -1,0 +1,40 @@
+<%- include('./partials/head') %>
+<link rel="stylesheet" href="/styles/author.css">
+
+<%- author[0].yoast_head %>
+</head>
+
+<body>
+  <%- include('./partials/header') %>
+
+  <main>
+    <h2><%= author[0].name %></h2>
+
+    <% if (author[0].avatar_urls) { %>
+      <img src="<%= author[0].avatar_urls["96"] %>" alt="avatar van <%= author[0].name %>" width="96" height="96">
+    <% } else {%>
+      <img src="/assets/errorimg.png" alt="kan avatar niet laden" width="96" height="96">
+    <% } %>
+
+    <% if (posts[0]) { %>
+      <% posts.forEach(function(post) { %>
+        <article class="readmore-card">
+              
+          <% if (post.jetpack_featured_media_url[0]) { %>
+            <img src="<%= post.yoast_head_json.og_image[0].url %>" alt="" width="<%= post.yoast_head_json.og_image[0].width %>" height="<%= post.yoast_head_json.og_image[0].height  %>">
+          <% } else { %>
+            <img src="/assets/errorimg.png" alt="Kan foto niet laden">
+          <% } %>
+      
+          <a href="/artikel/<%= post.slug %>">
+            <h2><%- post.title.rendered %></h2>
+            <p class="date"><%- post.date %></p>
+          </a>
+      
+        </article>
+      <% }) %> 
+    <% } else {%>
+      <h3> Er zijn geen artiekelen</h3>
+    <% } %>
+  </main>
+<%- include('./partials/footer') %>
