@@ -20,7 +20,7 @@
   --thumbnail-heightsm: 150px;
 
   --border: solid var(--color-dark) 1px;
-  --border-light: solid var(--color-light-100) 1px;
+  --border-light: solid var(--color-light-100) 2px;
   
   --margin-center: 0 auto;
 
