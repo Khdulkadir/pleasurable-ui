@@ -32,3 +32,152 @@ a{
   text-decoration: none;
   color: var(--color-dark);
 }
+
+main {
+  margin-top: 13rem;
+}
+
+/* #region Header */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: var(--color-light);
+}
+
+.header1 {
+  display: none;
+  background-color: black;
+  color: white;
+  padding-right: 1rem;
+
+  nav {
+      display: flex;
+      gap: 1rem;
+      justify-content: end;
+  }
+}
+
+.header2 {
+  border-bottom: var(--border);
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+  width: calc(100% - 4rem);
+
+  button {
+      all: unset;
+      cursor: pointer;
+      img {
+          max-width: 1.5rem;
+      }
+  }
+
+  .date-and-tagline {
+      display: none;
+      vertical-align: middle;
+      font-family: var(--nav-font);
+      text-transform: uppercase;
+
+      p {
+          margin: 0;
+      }
+
+      .date {
+          font-weight: bolder;
+      }
+  }
+
+  .logo {
+      width: 16rem;
+      height: 4rem;
+  }
+}
+
+.header3 {
+  .donate-and-newsletter {
+      display: flex;
+      flex-direction: column;
+      border: var(--border);
+      margin: 1.5rem;
+      padding: 1rem;
+      background-color: white;
+  }
+
+  .categories-nav {
+      position: fixed;
+      background-color: var(--background-color);
+      top: calc(3rem + 43.4px);
+      left: 0;
+      width: 67vw;
+      height: calc(100vh - 3rem - 43.4px);
+      transition: left 0.3s;
+
+      .categories {
+          border: var(--border);
+          display: flex;
+          flex-direction: column;
+          margin: 1rem;
+          padding: 2rem;
+          gap: 1rem;
+          align-items: center;
+          height: calc(100vh - 9rem - 43.4px);
+      }
+  }
+
+  .categories-nav.closed {
+      left: -67vw;
+      transition: left 0.3s;
+  }
+}
+/* #endregion Header */
+
+@media only screen and (min-width: 1025px) {
+
+  header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      
+      .header1 {
+          width: 100%;
+          display: block;
+      }
+
+      .header2 {
+          width: calc(100% - 4rem);
+          max-width: calc(80rem - 4rem);
+
+          .date-and-tagline {
+              display: block;
+          }
+      }
+
+      .header3 {
+          width: 100%;
+          max-width: 80rem;
+          
+          .donate-and-newsletter {
+              display: none;
+          }
+          
+          .categories-nav, .categories-nav.closed {
+              position: unset;
+              height: unset;
+              width: calc(100% - 3rem);
+
+              .categories {
+                  height: unset;
+                  width: 100%;
+                  display: flex;
+                  justify-content: center;
+                  flex-direction: row;
+                  padding: 0.5rem;
+              }
+          }
+      }
+
+      .menu-button {
+          display: none;
+      }
+  }}
