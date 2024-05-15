@@ -4,14 +4,14 @@ main{
 }
 
 /* #region Cards */
-article.readmore-card{
+.readmore-card{
   background-color: var(--color-light);
   margin: 1rem;
   border: var(--border);
   max-width: 250px;
 }
 
-article.readmore-card img{
+.readmore-card img{
   width: var(--thumbnail-width);
   height: var(--thumbnail-height);
   object-fit: cover;
@@ -19,7 +19,7 @@ article.readmore-card img{
   border-bottom: var(--border);
 }
 
-article.readmore-card h2{
+.readmore-card h2{
   padding: 0 var(--padding);
   height: var(--thumbnail-height);
 }

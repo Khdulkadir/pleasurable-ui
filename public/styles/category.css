@@ -5,7 +5,7 @@ h2{
 }
 
 /* #region Results */
-div.results{
+.results{
   background-color: var(--color-light);
   border: var(--border);
   margin: var(--margin-center);
@@ -14,17 +14,17 @@ div.results{
 }
 
 /* #region Article */
-div.results article{
+.results article{
   border-bottom: var(--border-light);
   padding: 10px 0;
 }
 
-div.results article p.date{
+.results article p.date{
   font-family: var(--font-alt);
   font-weight: 300;
 }
 
-div.results article img{
+.results article img{
   width: var(--thumbnail-width);
   height: var(--thumbnail-height);
   object-fit: cover;
@@ -37,20 +37,20 @@ div.results article img{
 @media only screen and (min-width: 700px){
   /* #region Results */
   /* #region Article */
-  div.results  article{
+  .results  article{
     display: flex;
   }
 
-  div.results  article p.date{
+  .results  article p.date{
     width: 25%;
   }
 
-  div.results  article h3{
+  .results  article h3{
     width: 50%;
     padding: 0 var(--padding);
   }
 
-  div.results  article img{
+  .results  article img{
     width: 200px;
     height: var(--thumbnail-heightsm);
   }
