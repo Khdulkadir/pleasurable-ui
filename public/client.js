@@ -5,7 +5,7 @@ searchInputs = document.querySelectorAll(".search-input"),
 searchterm = document.getElementById("searchterm"),
 header2 = document.querySelector(".header2"),
 header3 = document.querySelector(".header3");
-
+const forms = document.querySelectorAll('form');
 
 menuButton.addEventListener("click", () => {
     nav.classList.toggle("closed");
@@ -21,3 +21,33 @@ const observer = new IntersectionObserver(([{isIntersecting}], _) => { //Dit geb
 })
 
 observer.observe(header2) // Kijk naar header2
+
+forms.forEach(function(form) {
+  form.addEventListener('submit', function (event) {
+    document.getElementById("like-count").classList.add("loading");
+    const data = new FormData(this);
+    // data.append('enhanced', true);
+
+    fetch(this.action, {
+      method: this.method,
+      body: new URLSearchParams(data)
+    })
+    .then(function(response) {
+      return response.text();
+    })
+    .then(function(responseHTML) {
+      const parser = new DOMParser();
+      const responseDOM = parser.parseFromString(responseHTML, 'text/html');
+      const likeCount = responseDOM.querySelector('span#like-count');
+
+      const currentLikeCount = document.querySelector('span#like-count');
+      if (currentLikeCount && likeCount) {
+        currentLikeCount.innerHTML = likeCount.innerHTML;
+      }
+      document.getElementById("like-count").classList.remove("loading");
+      document.getElementById("like-count").classList.add("success");
+      document.getElementById("like-icon").classList.add("success");
+    });
+    event.preventDefault();
+  });
+});
