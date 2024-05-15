@@ -73,9 +73,9 @@ app.get("/artikel/:slug", (request, response) => {
 })
 
 app.post('/artikel/:slug', (request, response) => {
-  fetchJson(`https://fdnd-agency.directus.app/items/redpers_shares?filter[slug][_eq]=${request.params.slug}`)
+  fetchJson(`${directusUrl}?filter[slug][_eq]=${request.params.slug}`)
     .then(({ data }) => {
-      return fetchJson(`https://fdnd-agency.directus.app/items/redpers_shares/${data[0]?.id ? data[0].id : ''}`, {
+      return fetchJson(`${directusUrl}/${data[0]?.id ? data[0].id : ''}`, {
         method: data[0]?.id ? 'PATCH' : 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
