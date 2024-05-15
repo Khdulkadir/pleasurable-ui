@@ -1,0 +1,16 @@
+<%- include('./partials/head') %>
+<link rel="stylesheet" href="/styles/category.css">
+
+<%- category[0].yoast_head %>
+</head>
+
+<body>
+<%- include('./partials/header') %>
+
+<main>
+  <h2>Meer van: <%- category[0].name %></h2>
+
+  <%- include('./partials/results') %>
+</main>
+
+<%- include('./partials/footer') %>
