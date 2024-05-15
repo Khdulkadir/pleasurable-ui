@@ -1,11 +1,11 @@
-img.article-featured-image {
+.article-featured-image {
     height: 400px;
     object-fit: cover;
     object-position: center center;
     width: 100%;
 }
 
-div.article-featured-image-container {
+.article-featured-image-container {
     padding: 20px 0;
 }
 
@@ -15,11 +15,11 @@ article.article-page {
     margin: 0 auto;
 }
 
-div.article-title-container {
+.article-title-container {
     padding: 20px 0;
 }
 
-h2.article-title {
+.article-title {
     font-family: Inter;
     font-size: 26px;
     font-weight: 700;
@@ -27,44 +27,44 @@ h2.article-title {
     margin: 0 auto
 }
 
-span.article-excerpt {
+.article-excerpt {
     text-align: left;
     font-family: Inter;
     font-size: 18px;
     line-height: 27px;
 }
 
-div.article-content {
+.article-content {
     font-family: Inter;
     font-size: 16px;
     text-align: left;
     line-height: 28px;
 }
 
-div.article-content p {
+.article-content p {
     margin-bottom: 20px;
 }
 
-div.article-content a {
+.article-content a {
     display: inline;
 }
 
-div.article-content h4 {
+.article-content h4 {
     font-size: 18px;
 }
 
-div.article-category-date-container {
+.article-category-date-container {
     display: flex;
     justify-content: start;
     gap: 20px;
 }
 
-div.article-category-date-like-container {
+.article-category-date-like-container {
     display: flex;
     justify-content: space-between
 }
 
-p.article-category {
+.article-category {
     font-family: Inter;
     color: rosybrown;
     font-weight: 700;
@@ -72,13 +72,13 @@ p.article-category {
     font-size: 13px;
 }
 
-p.article-post-date {
+.article-post-date {
     font-family: Inter;
     text-transform: uppercase;
     font-size: 13px;
 }
 
-div.article-author-reading-time-container {
+.article-author-reading-time-container {
     padding: 30px 0;
     font-family: Inter;
     font-size: 13px;
@@ -87,20 +87,20 @@ div.article-author-reading-time-container {
     line-height: 28px;
 }
 
-div.article-content img {
+.article-content img {
     width: 100%;
     height: 400px;
     object-fit: cover;
     object-position: center center;
 }
 
-div.article-content figcaption {
+.article-content figcaption {
     font-size: 13px;
     font-style: italic;
     padding-bottom: 20px;
 }
 
-div.article-content blockquote {
+.article-content blockquote {
     font-size: 24px;
     font-weight: 700;
     padding: 20px 0;
@@ -114,7 +114,7 @@ div.article-content blockquote {
     }
 }
 
-button#like {
+#like {
     font-family: Inter;
     font-size: 13px;
     text-transform: uppercase;
@@ -125,22 +125,22 @@ button#like {
     }
 }
 
-button#like span svg {
+#like span svg {
     margin-right: 5px;
     vertical-align: -3px;
     fill: black;
 }
 
-span#like-count.success {
+#like-count.success {
     color: rosybrown;
     font-weight: 700;
 }
 
-span#like-count.loading {
+#like-count.loading {
     color: transparent;
 }
 
-svg#like-icon.success {
+#like-icon.success {
     fill: rosybrown;
 }
 
