@@ -27,7 +27,7 @@
 /* TiemposText */
 @font-face {
   font-display: swap;
-  font-family: "TiemposText";
+  font-family: "Tiempos";
   font-style: normal;
   font-weight: 400;
   src: url(/assets/TiemposText-Regular.ttf) format("ttf");
@@ -36,7 +36,7 @@
 /* TiemposHeadline */
 @font-face {
   font-display: swap;
-  font-family: "TiemposHeadline";
+  font-family: "Tiempos";
   font-style: normal;
   font-weight: 700;
   src: url(/assets/TiemposHeadline-Medium.ttf) format("ttf");
@@ -75,6 +75,9 @@ body {
 
   --line-length: 30em;
   --line-heigth: 1.5;
+
+  --font-main: Tiempos, 'Source serif 4';
+  --font-alt: Inter, 'sans-serif';
 }
 
 main {
