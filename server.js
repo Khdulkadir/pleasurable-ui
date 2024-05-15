@@ -1,7 +1,7 @@
 /*** Express setup & start ***/
 import fetchJson from './helpers/fetch-json.js'
 
-import express, { response } from 'express'
+import express, { request, response } from 'express'
 
 const app = express()
 
@@ -39,15 +39,26 @@ const redpersUrl = 'https://redpers.nl/wp-json/wp/v2/',
 /*** Routes & data ***/
 
 //Index route
-app.get('/', (request, response) => {
-  const fetchRequests = [fetchJson(`${postsUrl}?per_page=4`)]; // de 4 meest recente posts
+// app.get('/', (request, response) => {
+//   const fetchRequests = [fetchJson(`${postsUrl}?per_page=4`)]; // de 4 meest recente posts
   
-  categoriesData.forEach((category) => { // voeg voor elke category een extra fetch request toe
-      fetchRequests.push(fetchJson(`${postsUrl}?per_page=3&categories=${category.id}`)) // de 3 meest recente posts van elke categorie
-  })
+//   categoriesData.forEach((category) => { // voeg voor elke category een extra fetch request toe
+//       fetchRequests.push(fetchJson(`${postsUrl}?per_page=3&categories=${category.id}`)) // de 3 meest recente posts van elke categorie
+//   })
 
-  Promise.all(fetchRequests).then(posts => {  // Posts is een array van arrays van posts.
-      response.render('index', {posts, categoriesData})
+//   Promise.all(fetchRequests).then(posts => {  // Posts is een array van arrays van posts.
+//       response.render('index', {posts, categoriesData})
+//   })
+// })
+
+app.get('/', (request, response) => {
+  Promise.all([
+    Promise.all(categoriesData.map(category =>
+      fetchJson(`${postsUrl}?per_page=3&categories=${category.id}`)
+    )),
+    fetchJson(`${postsUrl}?per_page=4`)
+  ]).then(([postData, featuredData]) => {
+    response.render('index', { categories: categoriesData, posts: postData, featured: featuredData });
   })
 })
 
@@ -55,7 +66,7 @@ app.get('/', (request, response) => {
 app.get("/artikel/:slug", (request, response) => {
   const slugdirectus = encodeURIComponent(request.params.slug);
   Promise.all([
-    fetchJson(`${postsUrl}/?slug=${request.params.slug}&_fields=date,slug,title,author,content,excerpt,categories,yoast_head,yoast_head_json.author,yoast_head_json.twitter_misc,yoast_head_json.og_image`),
+    fetchJson(`${postsUrl}/?slug=${request.params.slug}&_fields=date,slug,title,author,content,excerpt,categories,yoast_head_json,yoast_head_json.author,yoast_head_json.twitter_misc,yoast_head_json.og_image`),
     fetchJson(`${directusUrl}?filter={"slug":"${slugdirectus}"}`),
     fetchJson(`${authorUrl}?_fields=id,slug,name,description,avatar_urls&per_page=100`),
     fetchJson(`${categoriesUrl}?_fields=id,name,slug&per_page=100`)
@@ -98,7 +109,7 @@ app.get('/categorie/:slug', function (request, response) {
   const category = categoriesData.find((category) => category.slug == request.params.slug);
 
   Promise.all([
-    fetchJson(`${postsUrl}?categories=${category.id}&_fields=date,slug,title,yoast_head_json.og_image,jetpack_featured_media_url&per_page=20`), 
+    fetchJson(`${postsUrl}?categories=${category.id}&_fields=date,slug,title,yoast_head_json.og_image, yoast_head_json.og_image,jetpack_featured_media_url&per_page=20`), 
     fetchJson(`${categoriesUrl}/?slug=${request.params.slug}&_fields=name,yoast_head`)
   ]).then(([postData, category]) => {
 

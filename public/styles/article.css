@@ -1,0 +1,173 @@
+img.article-featured-image {
+    height: 400px;
+    object-fit: cover;
+    object-position: center center;
+    width: 100%;
+}
+
+div.article-featured-image-container {
+    padding: 20px 0;
+}
+
+article.article-page {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+div.article-title-container {
+    padding: 20px 0;
+}
+
+h2.article-title {
+    font-family: Inter;
+    font-size: 26px;
+    font-weight: 700;
+    text-align: left;
+    margin: 0 auto
+}
+
+span.article-excerpt {
+    text-align: left;
+    font-family: Inter;
+    font-size: 18px;
+    line-height: 27px;
+}
+
+div.article-content {
+    font-family: Inter;
+    font-size: 16px;
+    text-align: left;
+    line-height: 28px;
+}
+
+div.article-content p {
+    margin-bottom: 20px;
+}
+
+div.article-content a {
+    display: inline;
+}
+
+div.article-content h4 {
+    font-size: 18px;
+}
+
+div.article-category-date-container {
+    display: flex;
+    justify-content: start;
+    gap: 20px;
+}
+
+div.article-category-date-like-container {
+    display: flex;
+    justify-content: space-between
+}
+
+p.article-category {
+    font-family: Inter;
+    color: rosybrown;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+
+p.article-post-date {
+    font-family: Inter;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+
+div.article-author-reading-time-container {
+    padding: 30px 0;
+    font-family: Inter;
+    font-size: 13px;
+    text-transform: uppercase;
+    text-align: left;
+    line-height: 28px;
+}
+
+div.article-content img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: center center;
+}
+
+div.article-content figcaption {
+    font-size: 13px;
+    font-style: italic;
+    padding-bottom: 20px;
+}
+
+div.article-content blockquote {
+    font-size: 24px;
+    font-weight: 700;
+    padding: 20px 0;
+    position: relative;
+    &:before {
+        content: "‘’";
+        color: rosybrown;
+        font-size: 60px;
+        position: absolute;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+}
+
+button#like {
+    font-family: Inter;
+    font-size: 13px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover {
+        opacity: 0.5;
+    }
+}
+
+button#like span svg {
+    margin-right: 5px;
+    vertical-align: -3px;
+    fill: black;
+}
+
+span#like-count.success {
+    color: rosybrown;
+    font-weight: 700;
+}
+
+span#like-count.loading {
+    color: transparent;
+}
+
+svg#like-icon.success {
+    fill: rosybrown;
+}
+
+.loading {
+  width: 16px;
+  height: 16px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 4px solid rosybrown;
+  display: inline-block;
+  vertical-align: -5px;
+  animation:
+    l20-1 0.8s infinite linear alternate,
+    l20-2 1.6s infinite linear;
+}
+@keyframes l20-1{
+   0%    {clip-path: polygon(50% 50%,0       0,  50%   0%,  50%    0%, 50%    0%, 50%    0%, 50%    0% )}
+   12.5% {clip-path: polygon(50% 50%,0       0,  50%   0%,  100%   0%, 100%   0%, 100%   0%, 100%   0% )}
+   25%   {clip-path: polygon(50% 50%,0       0,  50%   0%,  100%   0%, 100% 100%, 100% 100%, 100% 100% )}
+   50%   {clip-path: polygon(50% 50%,0       0,  50%   0%,  100%   0%, 100% 100%, 50%  100%, 0%   100% )}
+   62.5% {clip-path: polygon(50% 50%,100%    0, 100%   0%,  100%   0%, 100% 100%, 50%  100%, 0%   100% )}
+   75%   {clip-path: polygon(50% 50%,100% 100%, 100% 100%,  100% 100%, 100% 100%, 50%  100%, 0%   100% )}
+   100%  {clip-path: polygon(50% 50%,50%  100%,  50% 100%,   50% 100%,  50% 100%, 50%  100%, 0%   100% )}
+}
+@keyframes l20-2{ 
+  0%    {transform:scaleY(1)  rotate(0deg)}
+  49.99%{transform:scaleY(1)  rotate(135deg)}
+  50%   {transform:scaleY(-1) rotate(0deg)}
+  100%  {transform:scaleY(-1) rotate(-135deg)}
+}

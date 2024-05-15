@@ -1,0 +1,97 @@
+<link rel="stylesheet" href="/styles/index.css">
+
+<main>
+  <div class="main-container">
+    <a class="article-link" href="artikel/<%= featured[0].slug%>">
+      <article class="main-article">
+        <div class="article-content-container">
+          <div class="article-date-container">
+            <p class="article-date"><%= featured[0].date %></p>
+          </div>
+          <h2 class="article-title"><%- featured[0].title.rendered %></h2>
+          <span class="excerpt"><%- featured[0].excerpt.rendered %></span>
+          <div class="author-reading-time-container">
+            <p class="author"><%= featured[0].yoast_head_json.author %></p>
+            <p class="reading-time">– <%= featured[0].yoast_head_json.twitter_misc["Geschatte leestijd"] %></p>
+          </div>
+        </div>
+        <div class="article-image-container">
+          <img class="article-featured-image"
+              src="<%= featured[0].yoast_head_json.og_image[0].url%>"
+              width="<%= featured[0].yoast_head_json.og_image[0].width%>"
+              height="<%= featured[0].yoast_head_json.og_image[0].height%>"
+              alt="<%= featured[0].yoast_head_json.schema['@graph'][2].caption %>"
+          />
+          <p class="caption">Beeld: <%= featured[0].yoast_head_json.schema['@graph'][2].caption %></p>
+        </div>
+      </article>
+    </a>
+  </div>
+
+  <div class="sub-article-container">
+  <% for (var i = 1; i <= 3; i++) { %>
+    <a class="article-link" href="artikel/<%= featured[i].slug%>">
+      <article class="sub-article">
+        <div class="sub-article-featured-image-container">
+          <img loading="lazy" class="sub-article-featured-image"
+          src="<%= featured[i].yoast_head_json.og_image[0].url %>"
+          width="<%= featured[i].yoast_head_json.og_image[0].width %>"
+          height="<%= featured[i].yoast_head_json.og_image[0].height %>"
+          alt="<%= featured[i].yoast_head_json.schema['@graph'][2].caption %>"
+          />
+        </div>
+        <div class="sub-article-title-container">
+          <p class="sub-article-date-mobile"><%= featured[i].date %></p>
+          <h2 class="sub-article-title"><%- featured[i].title.rendered %></h2>
+        </div>
+        <div class="author-reading-time-date-container">
+          <p class="author-reading-time"><%= featured[i].yoast_head_json.author %>
+            <span class="reading-time">– <%= featured[i].yoast_head_json.twitter_misc["Geschatte leestijd"] %></span>
+          </p>
+          <p class="sub-article-date"><%= featured[i].date %></p>
+        </div>
+      </article>
+    </a>
+  <% } %>
+  </div>
+
+  <% categories.forEach((category, index) => { %>
+  <section class="sub-article-section">
+    <h2 class="sub-article-section-heading"><%= category.name %></h2>
+    <a class="sub-article-section-link" href="/<%= category.slug %>">
+      <span class="sub-article-section-link-text">Meer <%= category.name %></span>
+      <svg class="heading-link-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+        <path d="m12 2.25c-5.376 0-9.75 4.374-9.75 9.75s4.374 9.75 9.75 9.75 9.75-4.374 9.75-9.75-4.374-9.75-9.75-9.75zm0 18c-4.549 0-8.25-3.701-8.25-8.25s3.701-8.25 8.25-8.25 8.25 3.701 8.25 8.25-3.701 8.25-8.25 8.25zm2.53-8.781c.293.293.293.768 0 1.061l-3 3c-.146.146-.338.22-.53.22s-.384-.073-.53-.22c-.293-.293-.293-.768 0-1.061l2.47-2.47-2.47-2.46995c-.293-.293-.293-.76803 0-1.06103s.768-.293 1.061 0z">
+        </path>
+      </svg>
+    </a>
+  </section>
+
+  <div class="sub-article-container">
+  <% posts[index].forEach(article => { %>
+    <a class="article-link" href="artikel/<%= article.slug %>">
+      <article class="sub-article">
+        <div class="sub-article-featured-image-container">
+          <img loading="lazy" class="sub-article-featured-image"
+            src="<%= article.yoast_head_json.og_image[0].url %>"
+            width="<%= article.yoast_head_json.og_image[0].width %>"
+            height="<%= article.yoast_head_json.og_image[0].height %>"
+            alt="<%= article.yoast_head_json.schema['@graph'][2].caption %>"
+          />
+        </div>
+        <div class="sub-article-title-container">
+          <p class="sub-article-date-mobile"><%= article.date %></p>
+          <h2 class="sub-article-title"><%- article.title.rendered %></h2>
+        </div>
+        <div class="author-reading-time-date-container">
+          <p class="author-reading-time"><%= article.yoast_head_json.author %>
+            <span class="reading-time">– <%= article.yoast_head_json.twitter_misc["Geschatte leestijd"] %></span>
+          </p>
+          <p class="sub-article-date"><%= article.date %></p>
+        </div>
+      </article>
+    </a>
+  <% }); %>
+  </div>
+  <% }); %>
+</main>
