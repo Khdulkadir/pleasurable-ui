@@ -39,7 +39,6 @@ const redpersUrl = 'https://redpers.nl/wp-json/wp/v2/',
 /*** Routes & data ***/
 
 //Index route
-
 app.get('/', (request, response) => {
   Promise.all([
     Promise.all(categoriesData.map(category =>
@@ -69,7 +68,7 @@ app.get("/artikel/:slug", (request, response) => {
       return author.id == articleData[0].author
     })
 
-    response.render("article", {article: articleData, like: likeData.data, categoriesData, category: filterCategorie, author: filterAuthor})
+    response.render("article", {article: articleData, like: likeData.data, categories: categoriesData, category: filterCategorie, author: filterAuthor})
   })
 })
 
@@ -102,7 +101,7 @@ app.get('/categorie/:slug', function (request, response) {
     fetchJson(`${categoriesUrl}/?slug=${request.params.slug}&_fields=name,yoast_head`)
   ]).then(([postData, category]) => {
 
-    response.render('category', {posts: postData, category: category, categoriesData});
+    response.render('category', {posts: postData, category: category, categories: categoriesData});
   })
 })
 
@@ -115,7 +114,7 @@ app.get('/auteur/:slug', function (request, response) {
         return post.author == authorData[0].id
       })
 
-      response.render('author', {author: authorData, posts: filterPost, categoriesData })
+      response.render('author', {author: authorData, posts: filterPost, categories: categoriesData })
     })
 })  
 
@@ -123,6 +122,6 @@ app.get('/auteur/:slug', function (request, response) {
 app.get('/search', (request, response) => {
   const searchterm = request.query.q
   fetchJson(`${postsUrl}?search=${searchterm}`).then((posts) => {
-      response.render('search', {posts, categoriesData, searchterm})
+      response.render('search', {posts, categories: categoriesData, searchterm})
   })
 })

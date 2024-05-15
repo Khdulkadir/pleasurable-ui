@@ -51,7 +51,7 @@
             <div class="categories">
                 <a href="/">Voorpagina</a>
                 <%
-                categoriesData.forEach((category) => {%>
+                categories.forEach((category) => {%>
                     <a href="/categorie/<%= category.slug %>"><%= category.name %></a>
                 <%});%>
                 <form class="search-form" action="/search">
