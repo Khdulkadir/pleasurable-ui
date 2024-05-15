@@ -1,3 +1,4 @@
+/* #region Fonts */
 /* inter-regular - latin */
 @font-face {
   font-display: swap;
@@ -22,6 +23,25 @@
   font-weight: 700;
   src: url("/assets/fonts/inter-v13-latin-700.woff2") format("woff2");
 }
+
+/* TiemposText */
+@font-face {
+  font-display: swap;
+  font-family: "TiemposText";
+  font-style: normal;
+  font-weight: 400;
+  src: url(/assets/TiemposText-Regular.ttf) format("ttf");
+}
+
+/* TiemposHeadline */
+@font-face {
+  font-display: swap;
+  font-family: "TiemposHeadline";
+  font-style: normal;
+  font-weight: 700;
+  src: url(/assets/TiemposHeadline-Medium.ttf) format("ttf");
+}
+/* #endregion Fonts */
 
 *{
   box-sizing: border-box;
