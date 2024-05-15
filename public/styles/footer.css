@@ -74,6 +74,7 @@ li.footer-item a {
 
 li.footer-item {
   margin-bottom: 10px;
+  list-style: none;
 }
 
 h2.footer-title {
