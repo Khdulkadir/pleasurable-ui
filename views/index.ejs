@@ -1,5 +1,12 @@
+<%- include('./partials/head') %>
+<link rel="stylesheet" href="/styles/main.css">
 <link rel="stylesheet" href="/styles/index.css">
 
+<title>Red Pers - Podium voor publiek</title>
+</head>
+
+<body>
+<%- include('./partials/header') %>
 <main>
   <div class="main-container">
     <a class="article-link" href="artikel/<%= featured[0].slug%>">
@@ -95,3 +102,5 @@
   </div>
   <% }); %>
 </main>
+
+<%- include('./partials/footer') %>

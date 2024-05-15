@@ -39,17 +39,6 @@ const redpersUrl = 'https://redpers.nl/wp-json/wp/v2/',
 /*** Routes & data ***/
 
 //Index route
-// app.get('/', (request, response) => {
-//   const fetchRequests = [fetchJson(`${postsUrl}?per_page=4`)]; // de 4 meest recente posts
-
-//   categoriesData.forEach((category) => { // voeg voor elke category een extra fetch request toe
-//       fetchRequests.push(fetchJson(`${postsUrl}?per_page=3&categories=${category.id}`)) // de 3 meest recente posts van elke categorie
-//   })
-
-//   Promise.all(fetchRequests).then(posts => {  // Posts is een array van arrays van posts.
-//       response.render('index', {posts, categoriesData})
-//   })
-// })
 
 app.get('/', (request, response) => {
   Promise.all([
