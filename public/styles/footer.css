@@ -102,6 +102,7 @@ ul.footer-bottom-part-right-items {
 
 li.footer-bottom-part-right-item {
   margin-left: 20px;
+  list-style: none;
 }
 
 li.footer-bottom-part-right-item a {
