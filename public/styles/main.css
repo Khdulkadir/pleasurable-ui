@@ -96,6 +96,10 @@ header {
   top: 0;
   width: 100%;
   background-color: var(--color-light-100);
+  z-index: 1;
+  font-family: var(--font-alt);
+  text-transform: uppercase;
+  font-size: small;
 }
 
 .header1 {
@@ -123,8 +127,6 @@ header {
   .date-and-tagline {
       display: none;
       vertical-align: middle;
-      font-family: var(--nav-font);
-      text-transform: uppercase;
 
       p {
           margin: 0;
@@ -148,6 +150,8 @@ header {
 
 .header3 {
   background-color: var(--color-light-100);
+  z-index: 1;
+
   .categories-nav {
       position: fixed;
       background-color: var(--color-light-100);
@@ -216,8 +220,14 @@ header:has(.categories-nav.closed) .menu-button {
 .fixed {
   position: fixed;
 
-  .categories-nav .search-form {
-    display: block;
+  .categories-nav {
+    .categories {
+      margin-bottom: 0;
+    }
+
+    .search-form {
+      display: block;
+    }
   }
 }
 .search-form {
