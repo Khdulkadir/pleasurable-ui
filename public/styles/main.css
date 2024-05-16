@@ -31,11 +31,15 @@
 }
 
 body {
-  background-color: var(--color-light-100);
+  background-color: var(--color-background);
+  color: var(--color-text)
 }
 
 :root{
-  --color-dark: #000000;
+  --color-text: #000000;
+  --color-text-invert: #ffffff;
+  --color-background: #f7f7f5;
+  --color-background-thumbnail: #ffffff;
   --color-dark-100: #818181;
   --color-light-100: #f7f7f5;
   --color-light: #ffffff;
@@ -48,13 +52,31 @@ body {
   --thumbnail-height: 200px;
   --thumbnail-heightsm: 150px;
 
-  --border: solid var(--color-dark) 1px;
+  --border: solid var(--color-text) 1px;
   --border-light: solid var(--color-light-100) 2px;
   
   --margin-center: 0 auto;
 
   --line-length: 30em;
   --line-heigth: 1.5;
+}
+
+.only-on-dark-mode {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    --color-text: #cccccc;
+    --color-text-invert: #cccccc;
+    --color-background: #333333;
+    --color-background-thumbnail: #333333;
+    --border: solid var(--color-text) 1px;
+  }
+
+  .logo {
+    filter: invert();
+  }
 }
 
 main {
@@ -65,14 +87,14 @@ main {
 
 a{
   text-decoration: none;
-  color: var(--color-dark);
+  color: var(--color-text);
 }
 
 /* #region Header */
 header {
   top: 0;
   width: 100%;
-  background-color: var(--color-light-100);
+  background-color: var(--color-background);
 }
 
 .header1 {
@@ -87,7 +109,7 @@ header {
   }
 
   a {
-    color: white;
+    color: var(--color-text-invert);
   }
 }
 
@@ -124,10 +146,12 @@ header {
 }
 
 .header3 {
-  background-color: var(--color-light-100);
+  background-color: var(--color-background);
+  z-index: 1;
+
   .categories-nav {
       position: fixed;
-      background-color: var(--color-light-100);
+      background-color: var(--color-background);
       top: calc(3rem + 43.4px);
       left: 0;
       width: 67vw;

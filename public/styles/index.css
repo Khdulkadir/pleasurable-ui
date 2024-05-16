@@ -5,15 +5,15 @@ article.main-article {
 
 div.article-content-container {
   width: 33%;
-  border: 1px solid black;
-  background-color: white;
+  border: var(--border);
+  background-color: var(--color-background-thumbnail);
   position: relative;
   padding: 15px;
 }
 
 div.article-image-container {
   width: 67%;
-  border: 1px solid black;
+  border: var(--border);
   position: relative;
 }
 
@@ -29,7 +29,6 @@ h2.article-title {
   font-family: Inter;
   font-size: 26px;
   font-weight: 700;
-  color: black;
   padding: 20px 0;
   &:hover {
     text-decoration: underline;
@@ -40,8 +39,6 @@ span.excerpt {
   font-family: Inter;
   font-size: 18px;
   font-weight: 400;
-  color: black;
-  color: black;
   overflow: hidden;
 }
 
@@ -53,7 +50,6 @@ div.author-reading-time-container {
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
-  color: black;
 }
 
 p.reading-time {
@@ -82,7 +78,7 @@ div.article-date-container {
 }
 
 p.article-date {
-  color: white;
+  color: var(--color-text-invert);
   font-size: 13px;
   font-weight: 500;
   font-family: Inter;
@@ -113,7 +109,6 @@ h2.sub-article-title {
   font-family: Inter;
   font-size: 22px;
   font-weight: 700;
-  color: black;
   padding: 20px 0;
   &:hover {
     text-decoration: underline;
@@ -121,22 +116,22 @@ h2.sub-article-title {
 }
 
 article.sub-article {
-  background-color: white;
+  background-color: var(--color-background-thumbnail);
 }
 
 div.sub-article-featured-image-container {
-  border: 1px solid black;
+  border: var(--border);
 }
 
 div.sub-article-title-container {
-  border: 1px solid black;
+  border: var(--border);
   padding: 0 20px;
   border-top-color: transparent;
   height: 200px;
 }
 
 div.author-reading-time-date-container {
-  border: 1px solid black;
+  border: var(--border);
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
@@ -144,7 +139,6 @@ div.author-reading-time-date-container {
   font-size: 12px;
   font-weight: 700;
   font-family: Inter;
-  color: black;
   border-top-color: transparent;
 }
 
@@ -168,7 +162,7 @@ h2.sub-article-section-heading {
   font-size: 24px;
   font-weight: 700;
   text-transform: uppercase;
-  color: white;
+  color: var(--color-text-invert);
   background-color: black;
   padding: 10px 15px;
 }
@@ -183,7 +177,6 @@ a.sub-article-section-link {
   font-family: Inter;
   font-weight: 500;
   text-transform: uppercase;
-  color: black;
   padding-top: 10px;
   transition: 0.3s;
   &:hover {
@@ -213,8 +206,8 @@ p.sub-article-date-mobile {
 @media screen and (min-width: 300px) and (max-width:900px) {
   article.main-article {
     flex-direction: column-reverse;
-    background-color: white;
-    border: 1px solid black;
+    background-color: var(--color-background-thumbnail);
+    border: var(--border);
     padding: 10px;
   }
 
@@ -259,7 +252,7 @@ p.sub-article-date-mobile {
 
   article.sub-article {
     display: flex;
-    border: 1px solid black;
+    border: var(--border);
     position: relative;
   }
 
@@ -291,7 +284,7 @@ p.sub-article-date-mobile {
 
   div.sub-article-featured-image-container {
     border: none;
-    border-right: 1px solid black;
+    border-right: var(--border);
   }
 }
 
