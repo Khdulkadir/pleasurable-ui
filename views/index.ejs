@@ -2,6 +2,9 @@
 <link rel="stylesheet" href="/styles/main.css">
 <link rel="stylesheet" href="/styles/footer.css">
 <link rel="stylesheet" href="/styles/index.css">
+<link rel="stylesheet" href="/styles/darkmode.css">
+<script src="/darkmode.js" defer></script>
+
 
 <title>Red Pers - Podium voor publiek</title>
 </head>
@@ -53,7 +56,8 @@
             <h2 class="sub-article-title"><%- featured[i].title.rendered %></h2>
           </div>
           <div class="author-reading-time-date-container">
-            <p class="author-reading-time"><%= featured[i].yoast_head_json.author %>
+            <p class="author-reading-time">
+              <p class="author"><%= featured[i].yoast_head_json.author %></p>
               <span class="reading-time">– <%= featured[i].yoast_head_json.twitter_misc["Geschatte leestijd"] %></span>
             </p>
             <p class="sub-article-date"><%= featured[i].date %></p>
@@ -92,7 +96,8 @@
             <h2 class="sub-article-title"><%- article.title.rendered %></h2>
           </div>
           <div class="author-reading-time-date-container">
-            <p class="author-reading-time"><%= article.yoast_head_json.author %>
+            <p class="author-reading-time">
+              <p class="author"><%= article.yoast_head_json.author %></p>
               <span class="reading-time">– <%= article.yoast_head_json.twitter_misc["Geschatte leestijd"] %></span>
             </p>
             <p class="sub-article-date"><%= article.date %></p>

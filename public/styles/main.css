@@ -72,7 +72,7 @@ a{
 header {
   top: 0;
   width: 100%;
-  background-color: var(--color-light-100);
+  /* background-color: var(--color-light-100); */
 }
 
 .header1 {
@@ -124,10 +124,10 @@ header {
 }
 
 .header3 {
-  background-color: var(--color-light-100);
+  /* background-color: var(--color-light-100); */
   .categories-nav {
       position: fixed;
-      background-color: var(--color-light-100);
+      /* background-color: var(--color-light-100); */
       top: calc(3rem + 43.4px);
       left: 0;
       width: 67vw;
