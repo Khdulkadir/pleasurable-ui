@@ -67,10 +67,6 @@ main {
 a{
   text-decoration: none;
   color: var(--text-color);
-  
-  &:hover{
-    color: var(--alt-text-color);
-  }
 }
 
 /* #region Header */
@@ -78,6 +74,10 @@ header {
   top: 0;
   width: 100%;
   background-color: var(--background-color);
+
+  a:hover{
+    color: var(--alt-text-color);
+  }
 }
 
 .header1 {
