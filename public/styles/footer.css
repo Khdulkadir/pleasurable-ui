@@ -25,6 +25,7 @@ footer {
 
 .footer-logo-container {
   transition: 0.3s;
+  
   &:hover {
     opacity: 0.5;
   }
@@ -45,6 +46,7 @@ footer {
   transition: 0.3s;
   border: 1px solid black;
   cursor: pointer;
+  
   &:hover {
     background-color: white;
     color: black;
@@ -67,6 +69,7 @@ footer {
   font-size: 13px;
   font-weight: 400;
   transition: 0.3s;
+  
   &:hover {
     color: #a8a8a8;
   }
@@ -111,6 +114,7 @@ footer {
   font-weight: 400;
   color: black;
   transition: 0.3s;
+  
   &:hover {
     color: #a8a8a8;
   }

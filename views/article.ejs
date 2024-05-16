@@ -18,6 +18,7 @@
           height="<%= article[0].yoast_head_json.og_image[0].height %>"
           />
         </div>
+
         <div class="article-category-date-like-container">
           <div class="article-category-date-container">
             <p class="article-category"><%= article[0].categories[0] %></p>
@@ -39,10 +40,13 @@
           </form>
           <!-- END LIKE INTERACTION -->
         </div>
+
         <div class="article-title-container">
           <h2 class="article-title"><%- article[0].title.rendered %></h2>
         </div>
+
         <span class="article-excerpt"><%- article[0].excerpt.rendered %></span>
+
         <div class="article-author-reading-time-container">
           <p class="article-author">Auteur: 
             <strong><%= article[0].author %></strong>
@@ -51,12 +55,12 @@
             <strong><%= article[0].yoast_head_json.twitter_misc["Geschatte leestijd"] %></strong>
           </p>
         </div>
+
         <div class="article-content">
           <%- article[0].content.rendered %>
         </div>
       </article>
     </div>
   </main>
-</body>
 
 <%- include('./partials/footer') %>

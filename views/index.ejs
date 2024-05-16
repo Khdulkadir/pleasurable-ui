@@ -16,13 +16,16 @@
             <div class="article-date-container">
               <p class="article-date"><%= featured[0].date %></p>
             </div>
+
             <h2 class="article-title"><%- featured[0].title.rendered %></h2>
             <span class="excerpt"><%- featured[0].excerpt.rendered %></span>
+
             <div class="author-reading-time-container">
               <p class="author"><%= featured[0].yoast_head_json.author %></p>
               <p class="reading-time">– <%= featured[0].yoast_head_json.twitter_misc["Geschatte leestijd"] %></p>
             </div>
           </div>
+
           <div class="article-image-container">
             <img class="article-featured-image"
                 src="<%= featured[0].yoast_head_json.og_image[0].url%>"
@@ -48,10 +51,12 @@
             alt="<%= featured[i].yoast_head_json.schema['@graph'][2].caption %>"
             />
           </div>
+
           <div class="sub-article-title-container">
             <p class="sub-article-date-mobile"><%= featured[i].date %></p>
             <h2 class="sub-article-title"><%- featured[i].title.rendered %></h2>
           </div>
+
           <div class="author-reading-time-date-container">
             <p class="author-reading-time"><%= featured[i].yoast_head_json.author %>
               <span class="reading-time">– <%= featured[i].yoast_head_json.twitter_misc["Geschatte leestijd"] %></span>
@@ -87,10 +92,12 @@
               alt="<%= article.yoast_head_json.schema['@graph'][2].caption %>"
             />
           </div>
+
           <div class="sub-article-title-container">
             <p class="sub-article-date-mobile"><%= article.date %></p>
             <h2 class="sub-article-title"><%- article.title.rendered %></h2>
           </div>
+
           <div class="author-reading-time-date-container">
             <p class="author-reading-time"><%= article.yoast_head_json.author %>
               <span class="reading-time">– <%= article.yoast_head_json.twitter_misc["Geschatte leestijd"] %></span>
@@ -103,5 +110,5 @@
     </div>
     <% }); %>
   </main>
-</body>
+
 <%- include('./partials/footer') %>
