@@ -183,6 +183,7 @@
   font-weight: 500;
   text-transform: uppercase;
   color: var(--text-color);
+  fill: var(--text-color);
   padding-top: 10px;
   transition: 0.3s;
   &:hover {
