@@ -114,6 +114,7 @@
   font-weight: 700;
   color: var(--text-color);
   padding: 20px 0;
+  
   &:hover {
     text-decoration: underline;
   }
@@ -186,6 +187,7 @@
   fill: var(--text-color);
   padding-top: 10px;
   transition: 0.3s;
+  
   &:hover {
     fill: var(--alt-text-color);
     color: var(--alt-text-color);
