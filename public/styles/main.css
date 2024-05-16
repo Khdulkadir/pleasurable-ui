@@ -31,14 +31,15 @@
 }
 
 body {
-  background-color: var(--color-light-100);
+  background-color: var(--background-color);
 }
 
 :root{
+  --background-color: #f7f7f5;
+  --article-background-color: #ffffff;
   --text-color: #000000;
-  --color-dark-100: #818181;
-  --color-light-100: #f7f7f5;
-  --color-light: #ffffff;
+  --alt-text-color: #a8a8a8;
+
   --accent-color1: #e84340;
   --accent-color2: #5340e8;
   --accent-color3: #f2d930;
@@ -49,7 +50,7 @@ body {
   --thumbnail-heightsm: 150px;
 
   --border: solid var(--text-color) 1px;
-  --border-light: solid var(--color-light-100) 2px;
+  --border-light: solid var(--background-color) 2px;
   
   --margin-center: 0 auto;
 
@@ -72,12 +73,12 @@ a{
 header {
   top: 0;
   width: 100%;
-  background-color: var(--color-light-100);
+  background-color: var(--background-color);
 }
 
 .header1 {
   display: none;
-  background-color: black;
+  background-color: var(--text-color);
   padding-right: 1rem;
   height: 2.5rem;
 
@@ -87,7 +88,7 @@ header {
   }
 
   a {
-    color: white;
+    color: var(--article-background-color);
   }
 }
 
@@ -100,7 +101,7 @@ header {
   .date-and-tagline {
       display: none;
       vertical-align: middle;
-      font-family: var(--nav-font);
+      font-family: Inter;
       text-transform: uppercase;
 
       p {
@@ -124,10 +125,10 @@ header {
 }
 
 .header3 {
-  background-color: var(--color-light-100);
+  background-color: var(--background-color);
   .categories-nav {
       position: fixed;
-      background-color: var(--color-light-100);
+      background-color: var(--background-color);
       top: calc(3rem + 43.4px);
       left: 0;
       width: 67vw;
