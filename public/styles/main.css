@@ -35,7 +35,7 @@ body {
 }
 
 :root{
-  --color-dark: #000000;
+  --text-color: #000000;
   --color-dark-100: #818181;
   --color-light-100: #f7f7f5;
   --color-light: #ffffff;
@@ -48,7 +48,7 @@ body {
   --thumbnail-height: 200px;
   --thumbnail-heightsm: 150px;
 
-  --border: solid var(--color-dark) 1px;
+  --border: solid var(--text-color) 1px;
   --border-light: solid var(--color-light-100) 2px;
   
   --margin-center: 0 auto;
@@ -65,7 +65,7 @@ main {
 
 a{
   text-decoration: none;
-  color: var(--color-dark);
+  color: var(--text-color);
 }
 
 /* #region Header */
