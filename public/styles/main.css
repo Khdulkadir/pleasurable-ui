@@ -125,6 +125,10 @@ header {
   .newsletter-search {
     display: flex;
     gap: 1rem;
+
+    svg{
+      fill: var(--text-color);
+    }
   }
 }
 
@@ -150,6 +154,10 @@ header {
       gap: 3rem;
       align-items: center;
       height: calc(100vh - 9rem - 43.4px);
+
+      svg{
+        fill: var(--text-color);
+      }
     }
 
       .search-form {
