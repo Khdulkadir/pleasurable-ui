@@ -39,6 +39,7 @@ body {
   --article-background-color: #ffffff;
   --text-color: #000000;
   --alt-text-color: #a8a8a8;
+  --light-border-color: #9b9b9b94;
   --accent-color1: #e84340;
   --accent-color2: #5340e8;
   --accent-color3: #f2d930;
@@ -49,7 +50,7 @@ body {
   --thumbnail-heightsm: 150px;
 
   --border: solid var(--text-color) 1px;
-  --border-light: solid var(--alt-text-color) 1px;
+  --border-light: solid var(--light-border-color) 1px;
   
   --margin-center: 0 auto;
 
@@ -317,9 +318,10 @@ header:has(.categories-nav.closed) .menu-button {
     --article-background-color: #351617;
     --text-color: #F4F0E6;
     --alt-text-color: #FF9240;
-    --accent-color1: #e84340;
+    --light-border-color: #ffdede;
+    --accent-color1: #ECF3B0;
     --accent-color2: #5340e8;
-    --accent-color3: #f2d930;
+    --accent-color3: #f2d930; /*Mischien als accent color 1 doen*/
     --accent-color4: #f9cdc8;
   }
 }
