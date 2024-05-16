@@ -49,7 +49,7 @@ body {
   --thumbnail-heightsm: 150px;
 
   --border: solid var(--text-color) 1px;
-  --border-light: solid var(--background-color) 2px;
+  --border-light: solid var(--alt-text-color) 1px;
   
   --margin-center: 0 auto;
 
