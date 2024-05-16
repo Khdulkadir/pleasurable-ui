@@ -21,7 +21,9 @@
 
         <div class="article-category-date-like-container">
           <div class="article-category-date-container">
-            <p class="article-category"><%= article[0].categories[0] %></p>
+            <% if (category[0]) { %>
+              <a class="article-category" href="/categorie/<%= category[0].slug %>"><%- category[0].name %></a>
+            <% } %>
             <p class="article-post-date"><%= article[0].date %></p>
           </div>
 
@@ -46,11 +48,17 @@
         </div>
 
         <span class="article-excerpt"><%- article[0].excerpt.rendered %></span>
-
+        
         <div class="article-author-reading-time-container">
-          <p class="article-author">Auteur: 
-            <strong><%= article[0].author %></strong>
-          </p>
+          <% if (author[0]) { %>
+            <p class="article-author">Auteur:
+              <a href="/auteur/<%= author[0].slug %>"><strong><%= author[0].name %></strong></a>
+            </p>
+          <% } else { %>
+            <p class="article-author">Auteur: 
+              <strong><%= article[0].yoast_head_json.author %></strong>
+            </p>
+          <% } %>
           <p class="article-reading-time">Leestijd: 
             <strong><%= article[0].yoast_head_json.twitter_misc["Geschatte leestijd"] %></strong>
           </p>
