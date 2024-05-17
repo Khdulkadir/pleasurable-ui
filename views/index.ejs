@@ -19,13 +19,16 @@
             <div class="article-date-container">
               <p class="article-date"><%= featured[0].date %></p>
             </div>
+
             <h2 class="article-title"><%- featured[0].title.rendered %></h2>
             <span class="excerpt"><%- featured[0].excerpt.rendered %></span>
+
             <div class="author-reading-time-container">
               <p class="author"><%= featured[0].yoast_head_json.author %></p>
               <p class="reading-time">– <%= featured[0].yoast_head_json.twitter_misc["Geschatte leestijd"] %></p>
             </div>
           </div>
+
           <div class="article-image-container">
             <img class="article-featured-image"
                 src="<%= featured[0].yoast_head_json.og_image[0].url%>"
@@ -51,10 +54,12 @@
             alt="<%= featured[i].yoast_head_json.schema['@graph'][2].caption %>"
             />
           </div>
+
           <div class="sub-article-title-container">
             <p class="sub-article-date-mobile"><%= featured[i].date %></p>
             <h2 class="sub-article-title"><%- featured[i].title.rendered %></h2>
           </div>
+
           <div class="author-reading-time-date-container">
             <p class="author-reading-time">
               <p class="author"><%= featured[i].yoast_head_json.author %></p>
@@ -70,7 +75,7 @@
     <% categories.forEach((category, index) => { %>
     <section class="sub-article-section">
       <h2 class="sub-article-section-heading"><%= category.name %></h2>
-      <a class="sub-article-section-link" href="/<%= category.slug %>">
+      <a class="sub-article-section-link" href="categorie/<%= category.slug %>">
         <span class="sub-article-section-link-text">Meer <%= category.name %></span>
         <svg class="heading-link-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
           <path d="m12 2.25c-5.376 0-9.75 4.374-9.75 9.75s4.374 9.75 9.75 9.75 9.75-4.374 9.75-9.75-4.374-9.75-9.75-9.75zm0 18c-4.549 0-8.25-3.701-8.25-8.25s3.701-8.25 8.25-8.25 8.25 3.701 8.25 8.25-3.701 8.25-8.25 8.25zm2.53-8.781c.293.293.293.768 0 1.061l-3 3c-.146.146-.338.22-.53.22s-.384-.073-.53-.22c-.293-.293-.293-.768 0-1.061l2.47-2.47-2.47-2.46995c-.293-.293-.293-.76803 0-1.06103s.768-.293 1.061 0z">
@@ -91,10 +96,12 @@
               alt="<%= article.yoast_head_json.schema['@graph'][2].caption %>"
             />
           </div>
+
           <div class="sub-article-title-container">
             <p class="sub-article-date-mobile"><%= article.date %></p>
             <h2 class="sub-article-title"><%- article.title.rendered %></h2>
           </div>
+
           <div class="author-reading-time-date-container">
             <p class="author-reading-time">
               <p class="author"><%= article.yoast_head_json.author %></p>
@@ -108,5 +115,5 @@
     </div>
     <% }); %>
   </main>
-</body>
+
 <%- include('./partials/footer') %>
