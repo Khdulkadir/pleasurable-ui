@@ -19,7 +19,7 @@ footer {
 .footer-bottom-part {
   display: flex;
   justify-content: space-between;
-  border-top: 1px solid #a8a8a8;
+  border-top: var(--border-light);
   padding-bottom: 30px;
 }
 
@@ -36,21 +36,21 @@ footer {
 }
 
 .newsletter-form-button {
-  background-color: black;
-  color: white;
+  background-color: var(--text-color);
+  color: var(--article-background-color);
   padding: 10px 20px;
   font-family: Inter;
   font-size: 16px;
   font-weight: 400;
-  fill: white;
+  fill: var(--article-background-color);
   transition: 0.3s;
-  border: 1px solid black;
+  border: var(--border);
   cursor: pointer;
   
   &:hover {
-    background-color: white;
-    color: black;
-    fill: black;
+    background-color: var(--article-background-color);
+    color: var(--text-color);
+    fill: var(--text-color);
   }
 }
 
@@ -64,14 +64,14 @@ footer {
 }
 
 .footer-item a {
-  color: black;
+  color: var(--text-color);
   font-family: Inter;
   font-size: 13px;
   font-weight: 400;
   transition: 0.3s;
   
   &:hover {
-    color: #a8a8a8;
+    color: var(--alt-text-color);
   }
 }
 
@@ -85,6 +85,7 @@ footer {
   font-family: Inter;
   font-weight: 700;
   text-transform: uppercase;
+  color: var(--text-color);
   margin-bottom: 20px;
 }
 
@@ -97,6 +98,7 @@ footer {
   font-family: Inter;
   font-size: 13px;
   font-weight: 400;
+  color: var(--text-color);
 }
 
 .footer-bottom-part-right-items {
@@ -112,16 +114,16 @@ footer {
   font-family: Inter;
   font-size: 13px;
   font-weight: 400;
-  color: black;
+  color: var(--text-color);
   transition: 0.3s;
   
   &:hover {
-    color: #a8a8a8;
+    color: var(--alt-text-color);
   }
 }
 
 @media screen and (min-width: 300px) and (max-width:900px) {
-   .footer-top-part {
+  .footer-top-part {
     flex-direction: column;
     gap: 30px;
   }

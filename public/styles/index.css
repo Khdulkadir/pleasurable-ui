@@ -1,19 +1,19 @@
-article.main-article {
+.main-article {
   display: flex;
   gap: 20px;
 }
 
 .article-content-container {
   width: 33%;
-  border: 1px solid black;
-  background-color: white;
+  border: var(--border);
+  background-color: var(--article-background-color);
   position: relative;
   padding: 15px;
 }
 
 .article-image-container {
   width: 67%;
-  border: 1px solid black;
+  border: var(--border);
   position: relative;
 }
 
@@ -29,7 +29,7 @@ article.main-article {
   font-family: Inter;
   font-size: 26px;
   font-weight: 700;
-  color: black;
+  color: var(--text-color);
   padding: 20px 0;
   
   &:hover {
@@ -41,8 +41,7 @@ article.main-article {
   font-family: Inter;
   font-size: 18px;
   font-weight: 400;
-  color: black;
-  color: black;
+  color: var(--text-color);
   overflow: hidden;
 }
 
@@ -54,11 +53,11 @@ article.main-article {
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
-  color: black;
+  color: var(--text-color);
 }
 
 .reading-time {
-  color: #a8a8a8;
+  color: var(--alt-text-color);
   margin-left: 3px;
 }
 
@@ -66,15 +65,15 @@ article.main-article {
   position: absolute;
   bottom: 0;
   right: 0;
-  background-color: #00000080;
+  background-color: var(--img-text-background-color);
   padding: 3px;
   font-family: Inter;
   font-size: 13px;
-  color: white;
+  color: var(--article-background-color);
 }
 
 .article-date-container {
-  background-color: black;
+  background-color: var(--text-color);
   position: absolute;
   top: 0;
   left: 0;
@@ -83,7 +82,7 @@ article.main-article {
 }
 
 .article-date {
-  color: white;
+  color: var(--article-background-color);
   font-size: 13px;
   font-weight: 500;
   font-family: Inter;
@@ -114,7 +113,7 @@ article.main-article {
   font-family: Inter;
   font-size: 22px;
   font-weight: 700;
-  color: black;
+  color: var(--text-color);
   padding: 20px 0;
   
   &:hover {
@@ -123,22 +122,22 @@ article.main-article {
 }
 
 .sub-article {
-  background-color: white;
+  background-color: var(--article-background-color);
 }
 
 .sub-article-featured-image-container {
-  border: 1px solid black;
+  border: var(--border);
 }
 
 .sub-article-title-container {
-  border: 1px solid black;
+  border: var(--border);
   padding: 0 20px;
   border-top-color: transparent;
   height: 200px;
 }
 
 .author-reading-time-date-container {
-  border: 1px solid black;
+  border: var(--border);
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
@@ -146,22 +145,22 @@ article.main-article {
   font-size: 12px;
   font-weight: 700;
   font-family: Inter;
-  color: black;
+  color: var(--text-color);
   border-top-color: transparent;
 }
 
 .reading-time {
-  color: #a8a8a8;
+  color: var(--alt-text-color);
 }
 
 .sub-article-date {
-  color: #a8a8a8;
+  color: var(--alt-text-color);
 }
 
 .sub-article-section {
   display: flex;
   justify-content: space-between;
-  border-top: 5px solid black;
+  border-top: 5px solid var(--text-color);
   margin: 50px 0 20px;
 }
 
@@ -170,8 +169,8 @@ article.main-article {
   font-size: 24px;
   font-weight: 700;
   text-transform: uppercase;
-  color: white;
-  background-color: black;
+  color: var(--article-background-color);
+  background-color: var(--text-color);
   padding: 10px 15px;
 }
 
@@ -185,13 +184,14 @@ article.main-article {
   font-family: Inter;
   font-weight: 500;
   text-transform: uppercase;
-  color: black;
+  color: var(--text-color);
+  fill: var(--text-color);
   padding-top: 10px;
   transition: 0.3s;
   
   &:hover {
-    fill: #a8a8a8;
-    color: #a8a8a8;
+    fill: var(--alt-text-color);
+    color: var(--alt-text-color);
   }
 }
 
@@ -216,8 +216,8 @@ article.main-article {
 @media screen and (min-width: 300px) and (max-width:900px) {
   .main-article {
     flex-direction: column-reverse;
-    background-color: white;
-    border: 1px solid black;
+    background-color: var(--article-background-color);
+    border: var(--border);
     padding: 10px;
   }
 
@@ -262,7 +262,7 @@ article.main-article {
 
   .sub-article {
     display: flex;
-    border: 1px solid black;
+    border: var(--border);
     position: relative;
   }
 
@@ -284,8 +284,8 @@ article.main-article {
     font-size: 10px;
     font-weight: 700;
     font-family: Inter;
-    color: white;
-    background-color: black;
+    color: var(--article-background-color);
+    background-color: var(--text-color);
     padding: 3px;
     width: fit-content;
     margin-left: auto;
@@ -294,7 +294,7 @@ article.main-article {
 
   .sub-article-featured-image-container {
     border: none;
-    border-right: 1px solid black;
+    border-right: var(--border);
   }
 }
 

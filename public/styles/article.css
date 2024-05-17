@@ -13,6 +13,7 @@
   text-align: center;
   max-width: 800px;
   margin: 0 auto;
+  color: var(--text-color);
 }
 
 .article-title-container {
@@ -20,11 +21,11 @@
 }
 
 .article-title {
-  font-family: Inter;
-  font-size: 26px;
-  font-weight: 700;
-  text-align: left;
-  margin: 0 auto
+    font-family: Inter;
+    font-size: 26px;
+    font-weight: 700;
+    text-align: left;
+    margin: 0 auto;
 }
 
 .article-excerpt {
@@ -65,11 +66,11 @@
 }
 
 .article-category {
-  font-family: Inter;
-  color: rosybrown;
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 13px;
+    font-family: Inter;
+    color: var(--accent-color1);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 13px;
 }
 
 .article-post-date {
@@ -108,7 +109,7 @@
   
   &:before {
     content: "‘’";
-    color: rosybrown;
+    color: var(--accent-color1);
     font-size: 60px;
     position: absolute;
     font-family: Arial, Helvetica, sans-serif;
@@ -130,11 +131,11 @@
 #like span svg {
   margin-right: 5px;
   vertical-align: -3px;
-  fill: black;
+  fill: var(--text-color);
 }
 
 #like-count.success {
-  color: rosybrown;
+  color: var(--accent-color1);
   font-weight: 700;
 }
 
@@ -143,7 +144,7 @@
 }
 
 #like-icon.success {
-  fill: rosybrown;
+  fill: var(--accent-color1);
 }
 
 .loading {
@@ -151,7 +152,7 @@
   height: 16px;
   aspect-ratio: 1;
   border-radius: 50%;
-  border: 4px solid rosybrown;
+  border: 4px solid var(--accent-color1);
   display: inline-block;
   vertical-align: -5px;
   animation:
