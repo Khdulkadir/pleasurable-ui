@@ -1,0 +1,156 @@
+/* Hide the checkbox */
+.toggle {
+    display: none;
+}
+
+/* Style for the toggle switch */
+.toggle-label {
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    background-color: #ddd; /* Light mode background color */
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Style for the switch knob */
+.toggle-label::before {
+    content: '';
+    display: block;
+    width: 18px;
+    height: 18px;
+    background-color: #fff; /* Light mode knob color */
+    border-radius: 50%;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    transition: transform 0.3s ease;
+}
+
+/* Style for the switch when toggled */
+.toggle:checked + .toggle-label {
+    background-color: #333; /* Dark mode background color */
+}
+
+.toggle:checked + .toggle-label::before {
+    transform: translateX(20px); /* Move the knob to the right for dark mode */
+    background-color: #fff; /* Dark mode knob color */
+}
+
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    transition: 0.5s;
+}
+
+a.dark-mode {
+  color: white !important;
+  fill: white;
+  transition: 0.5s;
+
+}
+
+.categories.dark-mode {
+  border-top-color: white !important;
+  border-bottom-color: white !important;
+  transition: 0.5s;
+
+}
+
+div.article-content-container.dark-mode {
+  background-color: #292929;
+  transition: 0.5s;
+}
+
+span.excerpt.dark-mode {
+  color: #ffffff;
+  transition: 0.5s;
+
+}
+
+h2.article-title.dark-mode {
+  color: #ffffff;
+  transition: 0.5s;
+
+}
+
+p.author.dark-mode {
+  color: #ffffff;
+  transition: 0.5s;
+
+}
+
+article.sub-article.dark-mode {
+  background-color: #292929;
+  transition: 0.5s;
+
+}
+
+h2.sub-article-title.dark-mode {
+  color: #ffffff;
+  transition: 0.5s;
+
+}
+
+img.logo.dark-mode {
+  filter: invert(1);
+  transition: 0.5s;
+
+}
+
+svg.heading-link-icon.dark-mode {
+  fill: white;
+  transition: 0.5s;
+
+}
+
+
+/* @media (prefers-color-scheme: dark) {
+  body {
+    background-color: #1a1a1a;
+    color: #ffffff; 
+  }
+
+  a {
+    color: white !important;
+    fill: white;
+  }
+
+  .categories {
+    border-top-color: white !important;
+    border-bottom-color: white !important;
+  }
+
+  div.article-content-container {
+    background-color: #292929;
+  }
+
+  span.excerpt {
+    color: #ffffff;
+  }
+
+  h2.article-title {
+    color: #ffffff;
+  }
+
+  p.author {
+    color: #ffffff;
+  }
+
+  article.sub-article {
+    background-color: #292929;
+  }
+
+  h2.sub-article-title {
+    color: #ffffff;
+  }
+
+  img.logo {
+    filter: invert(1);
+  }
+
+  svg.heading-link-icon {
+    fill: white;
+  }
+}  */

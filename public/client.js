@@ -12,15 +12,15 @@ menuButton.addEventListener("click", () => {
 })
 
 // Code voor sticky header3 
-const observer = new IntersectionObserver(([{isIntersecting}], _) => { //Dit gebeurd wanneer header2 het scherm binnenkomt of verlaat
-    if (isIntersecting) { // Als header2 zichtbaar is
-        header3.classList.remove("fixed") //Zet header3 op geen fixed
-    } else { //Als header2 weggaat
-        header3.classList.add("fixed") //Zet header3 op fixed
-    }
-})
+// const observer = new IntersectionObserver(([{isIntersecting}], _) => { //Dit gebeurd wanneer header2 het scherm binnenkomt of verlaat
+//     if (isIntersecting) { // Als header2 zichtbaar is
+//         header3.classList.remove("fixed") //Zet header3 op geen fixed
+//     } else { //Als header2 weggaat
+//         header3.classList.add("fixed") //Zet header3 op fixed
+//     }
+// })
 
-observer.observe(header2) // Kijk naar header2
+// observer.observe(header2) // Kijk naar header2
 
 forms.forEach(function(form) {
   form.addEventListener('submit', function (event) {
