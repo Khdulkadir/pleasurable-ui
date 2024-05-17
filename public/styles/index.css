@@ -3,7 +3,7 @@ article.main-article {
   gap: 20px;
 }
 
-div.article-content-container {
+.article-content-container {
   width: 33%;
   border: var(--border);
   background-color: var(--color-background-thumbnail);
@@ -11,13 +11,13 @@ div.article-content-container {
   padding: 15px;
 }
 
-div.article-image-container {
+.article-image-container {
   width: 67%;
   border: var(--border);
   position: relative;
 }
 
-img.article-featured-image {
+.article-featured-image {
   height: 500px;
   object-fit: cover;
   object-position: center center;
@@ -25,24 +25,25 @@ img.article-featured-image {
   vertical-align: middle;
 }
 
-h2.article-title {
+.article-title {
   font-family: Inter;
   font-size: 26px;
   font-weight: 700;
   padding: 20px 0;
+  
   &:hover {
     text-decoration: underline;
   }
 }
 
-span.excerpt {
+.excerpt {
   font-family: Inter;
   font-size: 18px;
   font-weight: 400;
   overflow: hidden;
 }
 
-div.author-reading-time-container {
+.author-reading-time-container {
   position: absolute;
   bottom: 20px;
   display: flex;
@@ -52,12 +53,12 @@ div.author-reading-time-container {
   text-transform: uppercase;
 }
 
-p.reading-time {
+.reading-time {
   color: #a8a8a8;
   margin-left: 3px;
 }
 
-p.caption {
+.caption {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -68,7 +69,7 @@ p.caption {
   color: white;
 }
 
-div.article-date-container {
+.article-date-container {
   background-color: black;
   position: absolute;
   top: 0;
@@ -85,7 +86,7 @@ p.article-date {
   text-transform: uppercase;
 }
 
-div.sub-article-container {
+.sub-article-container {
   display: flex;
   width: 100%;
   padding: 20px 0;
@@ -93,11 +94,11 @@ div.sub-article-container {
   gap: 20px;
 }
 
-div.sub-article-container a.article-link {
+.sub-article-container a.article-link {
   width: 33.333%;
 }
 
-img.sub-article-featured-image {
+.sub-article-featured-image {
   width: 100%;
   height: 250px;
   object-fit: cover;
@@ -105,11 +106,12 @@ img.sub-article-featured-image {
   vertical-align: middle;
 }
 
-h2.sub-article-title {
+.sub-article-title {
   font-family: Inter;
   font-size: 22px;
   font-weight: 700;
   padding: 20px 0;
+  
   &:hover {
     text-decoration: underline;
   }
@@ -142,22 +144,22 @@ div.author-reading-time-date-container {
   border-top-color: transparent;
 }
 
-span.reading-time {
+.reading-time {
   color: #a8a8a8;
 }
 
-p.sub-article-date {
+.sub-article-date {
   color: #a8a8a8;
 }
 
-section.sub-article-section {
+.sub-article-section {
   display: flex;
   justify-content: space-between;
   border-top: 5px solid black;
   margin: 50px 0 20px;
 }
 
-h2.sub-article-section-heading {
+.sub-article-section-heading {
   font-family: Inter;
   font-size: 24px;
   font-weight: 700;
@@ -167,59 +169,60 @@ h2.sub-article-section-heading {
   padding: 10px 15px;
 }
 
-span.sub-article-section-link-text {
+.sub-article-section-link-text {
   vertical-align: 6px;
   margin-right: 20px;
 }
 
-a.sub-article-section-link {
+.sub-article-section-link {
   font-size: 13px;
   font-family: Inter;
   font-weight: 500;
   text-transform: uppercase;
   padding-top: 10px;
   transition: 0.3s;
+  
   &:hover {
     fill: #a8a8a8;
     color: #a8a8a8;
   }
 }
 
-p.sub-article-date-mobile {
+.sub-article-date-mobile {
   display: none;
 }
 
 @media screen and (min-width: 900px) and (max-width:1060px) {
-  div.sub-article-container a.article-link {
+  .sub-article-container a.article-link {
     width: 48%;
   }
 
-  div.sub-article-container {
+  .sub-article-container {
     flex-wrap: wrap;
   }
 
-  span.excerpt {
+  .excerpt {
     font-size: 16px;
   }
 }
 
 @media screen and (min-width: 300px) and (max-width:900px) {
-  article.main-article {
+  .main-article {
     flex-direction: column-reverse;
     background-color: var(--color-background-thumbnail);
     border: var(--border);
     padding: 10px;
   }
 
-  div.article-image-container {
+  .article-image-container {
     width: 100%;
   }
 
-  img.article-featured-image {
+  .article-featured-image {
     height: 300px;
   }
 
-  div.article-content-container {
+  .article-content-container {
     width: 100%;
     border: none;
     padding: 0;
@@ -227,36 +230,36 @@ p.sub-article-date-mobile {
     padding-top: 15px;
   }
 
-  div.sub-article-container a.article-link {
+  .sub-article-container a.article-link {
     width: 100%;
   }
 
-  div.sub-article-container {
+  .sub-article-container {
     flex-wrap: wrap
   }
 
-  img.sub-article-featured-image {
+  .sub-article-featured-image {
     height: 150px;
     width: 150px;
   }
 
-  h2.sub-article-title {
+  .sub-article-title {
     font-size: 16px;
   }
 
-  div.sub-article-title-container {
+  .sub-article-title-container {
     height: 100%;
     border: none;
     width: 100%;
   }
 
-  article.sub-article {
+  .sub-article {
     display: flex;
     border: var(--border);
     position: relative;
   }
 
-  div.author-reading-time-date-container {
+  .author-reading-time-date-container {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -264,11 +267,11 @@ p.sub-article-date-mobile {
     border: none;
   }
 
-  p.sub-article-date {
+  .sub-article-date {
     display: none;
   }
 
-  p.sub-article-date-mobile {
+  .sub-article-date-mobile {
     display: block;
     text-transform: uppercase;
     font-size: 10px;
@@ -282,7 +285,7 @@ p.sub-article-date-mobile {
     margin-right: -20px;
   }
 
-  div.sub-article-featured-image-container {
+  .sub-article-featured-image-container {
     border: none;
     border-right: var(--border);
   }
@@ -290,51 +293,51 @@ p.sub-article-date-mobile {
 
 @media screen and (max-width:500px) {
 
-  div.sub-article-title-container {
+  .sub-article-title-container {
     padding-bottom: 30px;
   }
 
-  h2.sub-article-title {
+  .sub-article-title {
     font-size: 13px;
     padding: 10px 0;
   }
 
-  h2.article-title {
+  .article-title {
     font-size: 16px;
   }
 
-  span.excerpt {
+  .excerpt {
     font-size: 13px;
   }
 
-  div.author-reading-time-date-container {
+  .author-reading-time-date-container {
     font-size: 8px;
     width: fit-content;
     text-align: right;
     display: block;
   }
 
-  img.article-featured-image {
+  .article-featured-image {
     height: 200px;
   }
 
-  h2.sub-article-section-heading {
+  .sub-article-section-heading {
     font-size: 13px;
   }
 
-  p.sub-article-date-mobile {
+  .sub-article-date-mobile {
     font-size: 8px;
   }
 
-  div.sub-article-featured-image-container {
+  .sub-article-featured-image-container {
     border-right: none;
   }
 
-  span.sub-article-section-link-text {
+  .sub-article-section-link-text {
     margin-right: 10px;
   }
 
-  div.author-reading-time-date-container {
+  .author-reading-time-date-container {
     width: 100%
   }
 }
