@@ -1,3 +1,4 @@
+/* #region Fonts */
 /* inter-regular - latin */
 @font-face {
   font-display: swap;
@@ -22,6 +23,25 @@
   font-weight: 700;
   src: url("/assets/fonts/inter-v13-latin-700.woff2") format("woff2");
 }
+
+/* TiemposText */
+@font-face {
+  font-display: swap;
+  font-family: "Tiempos";
+  font-style: normal;
+  font-weight: 400;
+  src: url(/assets/TiemposText-Regular.ttf) format("ttf");
+}
+
+/* TiemposHeadline */
+@font-face {
+  font-display: swap;
+  font-family: "Tiempos";
+  font-style: normal;
+  font-weight: 700;
+  src: url(/assets/TiemposHeadline-Medium.ttf) format("ttf");
+}
+/* #endregion Fonts */
 
 *{
   box-sizing: border-box;
@@ -57,6 +77,9 @@ body {
 
   --line-length: 30em;
   --line-heigth: 1.5;
+
+  --font-main: Tiempos, 'Source serif 4';
+  --font-alt: Inter, 'sans-serif';
 }
 
 main {
@@ -75,7 +98,11 @@ header {
   top: 0;
   width: 100%;
   background-color: var(--background-color);
-
+  z-index: 1;
+  font-family: var(--font-alt);
+  text-transform: uppercase;
+  font-size: small;
+  
   a:hover{
     color: var(--alt-text-color);
   }
@@ -106,11 +133,10 @@ header {
   .date-and-tagline {
     display: none;
     vertical-align: middle;
-    font-family: Inter;
+    font-family: var(--font-alt);
     text-transform: uppercase;
-    color: var(--text-color);
 
-    p {  
+    p {
       margin: 0;
     }
 
@@ -136,7 +162,8 @@ header {
 
 .header3 {
   background-color: var(--background-color);
-  
+  z-index: 1;
+
   .categories-nav {
     position: fixed;
     background-color: var(--background-color);
@@ -162,9 +189,9 @@ header {
       }
     }
 
-      .search-form {
-        display: none;
-      }
+    .search-form {
+      display: none;
+    }
   }
 
   .categories-nav.closed {
@@ -181,6 +208,7 @@ button {
     max-width: 1.5rem;
   }
 }
+
 .menu-button {
   z-index: 1;
 
@@ -210,8 +238,14 @@ header:has(.categories-nav.closed) .menu-button {
 .fixed {
   position: fixed;
 
-  .categories-nav .search-form {
-    display: block;
+  .categories-nav {
+    .categories {
+      margin-bottom: 0;
+    }
+
+    .search-form {
+      display: block;
+    }
   }
 }
 
@@ -311,7 +345,6 @@ header:has(.categories-nav.closed) .menu-button {
     }
   }
 }
-/* #endregion Media */
 
 @media (prefers-color-scheme: dark) {
   :root{
@@ -327,3 +360,5 @@ header:has(.categories-nav.closed) .menu-button {
     --accent-color4: #f9cdc8;
   }
 }
+/* #endregion Media */
+

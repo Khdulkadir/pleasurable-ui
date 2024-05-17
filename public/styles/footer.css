@@ -75,7 +75,7 @@ footer {
   }
 }
 
-li.footer-item {
+.footer-item {
   margin-bottom: 10px;
   list-style: none;
 }
