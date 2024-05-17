@@ -40,9 +40,6 @@ body {
   --color-text-invert: #ffffff;
   --color-background: #f7f7f5;
   --color-background-thumbnail: #ffffff;
-  --color-dark-100: #818181;
-  --color-light-100: #f7f7f5;
-  --color-light: #ffffff;
   --accent-color1: #e84340;
   --accent-color2: #5340e8;
   --accent-color3: #f2d930;
@@ -53,16 +50,12 @@ body {
   --thumbnail-heightsm: 150px;
 
   --border: solid var(--color-text) 1px;
-  --border-light: solid var(--color-light-100) 2px;
+  --border-light: solid #f7f7f5 2px;
   
   --margin-center: 0 auto;
 
   --line-length: 30em;
   --line-heigth: 1.5;
-}
-
-.only-on-dark-mode {
-  display: none;
 }
 
 @media (prefers-color-scheme: dark) {
