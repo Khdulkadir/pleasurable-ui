@@ -63,8 +63,7 @@ footer {
   font-weight: 400;
 }
 
-.footer-item a {
-  color: black;
+li.footer-item a {
   font-family: Inter;
   font-size: 13px;
   font-weight: 400;

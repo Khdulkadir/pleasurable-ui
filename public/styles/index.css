@@ -5,15 +5,15 @@ article.main-article {
 
 .article-content-container {
   width: 33%;
-  border: 1px solid black;
-  background-color: white;
+  border: var(--border);
+  background-color: var(--color-background-thumbnail);
   position: relative;
   padding: 15px;
 }
 
 .article-image-container {
   width: 67%;
-  border: 1px solid black;
+  border: var(--border);
   position: relative;
 }
 
@@ -29,7 +29,6 @@ article.main-article {
   font-family: Inter;
   font-size: 26px;
   font-weight: 700;
-  color: black;
   padding: 20px 0;
   
   &:hover {
@@ -41,8 +40,6 @@ article.main-article {
   font-family: Inter;
   font-size: 18px;
   font-weight: 400;
-  color: black;
-  color: black;
   overflow: hidden;
 }
 
@@ -54,7 +51,6 @@ article.main-article {
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
-  color: black;
 }
 
 .reading-time {
@@ -82,8 +78,8 @@ article.main-article {
   padding: 5px 20px;
 }
 
-.article-date {
-  color: white;
+p.article-date {
+  color: var(--color-text-invert);
   font-size: 13px;
   font-weight: 500;
   font-family: Inter;
@@ -114,7 +110,6 @@ article.main-article {
   font-family: Inter;
   font-size: 22px;
   font-weight: 700;
-  color: black;
   padding: 20px 0;
   
   &:hover {
@@ -122,23 +117,23 @@ article.main-article {
   }
 }
 
-.sub-article {
-  background-color: white;
+article.sub-article {
+  background-color: var(--color-background-thumbnail);
 }
 
-.sub-article-featured-image-container {
-  border: 1px solid black;
+div.sub-article-featured-image-container {
+  border: var(--border);
 }
 
-.sub-article-title-container {
-  border: 1px solid black;
+div.sub-article-title-container {
+  border: var(--border);
   padding: 0 20px;
   border-top-color: transparent;
   height: 200px;
 }
 
-.author-reading-time-date-container {
-  border: 1px solid black;
+div.author-reading-time-date-container {
+  border: var(--border);
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
@@ -146,7 +141,6 @@ article.main-article {
   font-size: 12px;
   font-weight: 700;
   font-family: Inter;
-  color: black;
   border-top-color: transparent;
 }
 
@@ -170,7 +164,7 @@ article.main-article {
   font-size: 24px;
   font-weight: 700;
   text-transform: uppercase;
-  color: white;
+  color: var(--color-text-invert);
   background-color: black;
   padding: 10px 15px;
 }
@@ -185,7 +179,6 @@ article.main-article {
   font-family: Inter;
   font-weight: 500;
   text-transform: uppercase;
-  color: black;
   padding-top: 10px;
   transition: 0.3s;
   
@@ -216,8 +209,8 @@ article.main-article {
 @media screen and (min-width: 300px) and (max-width:900px) {
   .main-article {
     flex-direction: column-reverse;
-    background-color: white;
-    border: 1px solid black;
+    background-color: var(--color-background-thumbnail);
+    border: var(--border);
     padding: 10px;
   }
 
@@ -262,7 +255,7 @@ article.main-article {
 
   .sub-article {
     display: flex;
-    border: 1px solid black;
+    border: var(--border);
     position: relative;
   }
 
@@ -294,7 +287,7 @@ article.main-article {
 
   .sub-article-featured-image-container {
     border: none;
-    border-right: 1px solid black;
+    border-right: var(--border);
   }
 }
 
