@@ -37,6 +37,7 @@ body {
 :root{
   --background-color: #f7f7f5;
   --article-background-color: #ffffff;
+  --img-text-background-color: #00000080;
   --text-color: #000000;
   --alt-text-color: #a8a8a8;
   --light-border-color: #9b9b9b94;
@@ -316,6 +317,7 @@ header:has(.categories-nav.closed) .menu-button {
   :root{
     --background-color: #411818;
     --article-background-color: #351617;
+    --img-text-background-color: #f4f0e6b9;
     --text-color: #F4F0E6;
     --alt-text-color: #FF9240;
     --light-border-color: #ffdede;

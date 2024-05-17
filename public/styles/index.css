@@ -31,6 +31,7 @@
   font-weight: 700;
   color: var(--text-color);
   padding: 20px 0;
+  
   &:hover {
     text-decoration: underline;
   }
@@ -64,7 +65,7 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  background-color: #00000080;
+  background-color: var(--img-text-background-color);
   padding: 3px;
   font-family: Inter;
   font-size: 13px;
