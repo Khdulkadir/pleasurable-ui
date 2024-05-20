@@ -135,6 +135,7 @@ header {
     vertical-align: middle;
     font-family: var(--font-alt);
     text-transform: uppercase;
+    color: var(--text-color);
 
     p {
       margin: 0;
@@ -145,11 +146,6 @@ header {
     }
   }
 
-  .logo {
-    width: 150px;
-    height: 35px;
-  }
-
   .newsletter-search {
     display: flex;
     gap: 1rem;
@@ -158,6 +154,12 @@ header {
       fill: var(--text-color);
     }
   }
+}
+
+.logo {
+  width: 150px;
+  height: 35px;
+  filter: invert(1);
 }
 
 .header3 {
