@@ -159,7 +159,11 @@ header {
 .logo {
   width: 150px;
   height: 35px;
-  filter: invert(1);
+  transition: 0.3s;
+  
+  &:hover {
+    opacity: 0.5;
+  }
 }
 
 .header3 {
@@ -360,6 +364,10 @@ header:has(.categories-nav.closed) .menu-button {
     --accent-color2: #5340e8;
     --accent-color3: #f2d930; /*Mischien als accent color 1 doen*/
     --accent-color4: #f9cdc8;
+  }
+
+  .logo {
+  filter: invert(1);
   }
 }
 /* #endregion Media */
