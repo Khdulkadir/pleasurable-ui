@@ -2,11 +2,12 @@ h2{
   text-align: center;
   font-size: 2rem;
   padding: 3rem 0;
+  color: var(--text-color);
 }
 
 /* #region Results */
 .results{
-  background-color: var(--color-light);
+  background-color: var(--article-background-color);
   border: var(--border);
   margin: var(--margin-center);
   padding: 30px;

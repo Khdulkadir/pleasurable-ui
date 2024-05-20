@@ -111,13 +111,14 @@ header {
 /* #region Header1 */
 .header1 {
   display: none;
-  background-color: var(--text-color);
+  background-color: black;
+  border-bottom: var(--border);
   padding-right: 1rem;
   height: 2.5rem;
 }
 
 .header1 a {
-  color: var(--article-background-color);
+  color: white;
 }
 
 .header1 a:hover{
@@ -364,11 +365,11 @@ header:has(.categories-nav.closed) .menu-button {
 
 @media (prefers-color-scheme: dark) {
   :root{
-    --background-color: #411818;
-    --article-background-color: #351617;
+    --background-color: #230606;
+    --article-background-color: #000000;
     --img-text-background-color: #f4f0e6b9;
     --text-color: #F4F0E6;
-    --alt-text-color: #FF9240;
+    --alt-text-color: #ff5640;
     --light-border-color: #ffdede;
     --accent-color1: #ECF3B0;
     --accent-color2: #5340e8;
