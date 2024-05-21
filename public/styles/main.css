@@ -232,10 +232,12 @@ button img {
 
 .menu-icon {
   display: none;
+  stroke: var(--text-color);
 }
 
 .close-icon {
   display: block;
+  fill: var(--text-color);
 }
 /* #endregion Header3 */
 
