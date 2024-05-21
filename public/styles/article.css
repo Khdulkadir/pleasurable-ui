@@ -12,7 +12,7 @@
 .article-page {
   text-align: center;
   max-width: 800px;
-  margin: 0 auto;
+  margin: 1rem;
   color: var(--text-color);
 }
 
@@ -21,11 +21,10 @@
 }
 
 .article-title {
-    font-family: Inter;
-    font-size: 26px;
-    font-weight: 700;
-    text-align: left;
-    margin: 0 auto;
+  font-family: Inter;
+  font-size: 26px;
+  font-weight: 700;
+  text-align: left;
 }
 
 .article-excerpt {
@@ -66,11 +65,11 @@
 }
 
 .article-category {
-    font-family: Inter;
-    color: var(--accent-color1);
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 13px;
+  font-family: Inter;
+  color: var(--accent-color1);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 13px;
 }
 
 .article-post-date {
@@ -116,6 +115,7 @@
   }
 }
 
+/* #region Like */
 #like {
   font-family: Inter;
   font-size: 13px;
@@ -175,4 +175,11 @@
   49.99%{transform:scaleY(1)  rotate(135deg)}
   50%   {transform:scaleY(-1) rotate(0deg)}
   100%  {transform:scaleY(-1) rotate(-135deg)}
+}
+/* #endregion Like */
+
+@media only screen and (min-width: 800px) {
+  .article-page{
+    margin: var(--margin-center);
+  }
 }
