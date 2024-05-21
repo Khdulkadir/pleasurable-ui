@@ -83,9 +83,9 @@ body {
 }
 
 main {
-  margin-top: 6rem;
   max-width: 1200px;
   margin: var(--margin-center);
+  margin-top: 6rem;
 }
 
 a {
@@ -185,9 +185,9 @@ header {
 .categories-nav {
   position: fixed;
   background-color: var(--background-color);
-  top: calc(3rem + 43.4px);
+  top: calc(3rem + 40px);
   left: 0;
-  width: 67vw;
+  width: min(67vw, 25rem);
   height: calc(100vh - 3rem - 43.4px);
   transition: left 0.3s;
 }
@@ -202,8 +202,7 @@ header {
 }
 
 .categories {
-  border-top: var(--border);
-  border-bottom: var(--border);
+  border: var(--border);
   display: flex;
   flex-direction: column;
   margin: 1rem;
@@ -356,6 +355,8 @@ header:has(.categories-nav.closed) .menu-button {
           justify-content: center;
           flex-direction: row;
           padding: 0.5rem;
+          border-right: none;
+          border-left: none;
         }
       }
     }
