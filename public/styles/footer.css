@@ -71,7 +71,8 @@ footer {
   transition: 0.3s;
   
   &:hover {
-    color: var(--alt-text-color);
+    font-weight: bold;
+    transition: 0.3s;
   }
 }
 
