@@ -54,7 +54,7 @@ app.get('/', (request, response) => {
 app.get("/artikel/:slug", (request, response) => {
   const slugdirectus = encodeURIComponent(request.params.slug)
   Promise.all([
-    fetchJson(`${postsUrl}/?slug=${request.params.slug}&_fields=date,slug,title,author,content,excerpt,categories,yoast_head_json,yoast_head_json.author,yoast_head_json.twitter_misc,yoast_head_json.og_image`),
+    fetchJson(`${postsUrl}/?slug=${request.params.slug}&_fields=date,slug,title,author,content,excerpt,categories,yoast_head,yoast_head_json`),
     fetchJson(`${directusUrl}?filter={"slug":"${slugdirectus}"}`),
     fetchJson(`${authorUrl}?_fields=id,slug,name,description,avatar_urls&per_page=100`),
     fetchJson(`${categoriesUrl}?_fields=id,name,slug&per_page=100`)
