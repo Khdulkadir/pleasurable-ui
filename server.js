@@ -35,7 +35,6 @@ const redpersUrl = 'https://redpers.nl/wp-json/wp/v2/',
         {"id": 63, "name": "Politiek", "slug": "politiek"},
         {"id": 94, "name": "Wetenschap", "slug": "wetenschap"},
       ];
-
 /*** Routes & data ***/
 
 //Index route
@@ -58,7 +57,7 @@ app.get("/artikel/:slug", (request, response) => {
     fetchJson(`${directusUrl}?filter={"slug":"${slugdirectus}"}`),
     fetchJson(`${authorUrl}?_fields=id,slug,name,description,avatar_urls&per_page=100`),
     fetchJson(`${categoriesUrl}?_fields=id,name,slug&per_page=100`)
-  ]).then(([articleData, likeData, authorData, categoryData]) => {
+  ]).then(([postData, likeData, authorData, categoryData]) => {
 
     let filterCategorie = categoryData.filter(category => {
       return category.id == articleData[0].categories[0]
@@ -68,7 +67,7 @@ app.get("/artikel/:slug", (request, response) => {
       return author.id == articleData[0].author
     })
 
-    response.render("article", {article: articleData, like: likeData.data, categories: categoriesData, category: filterCategorie, author: filterAuthor})
+    response.render("article", {article: postData, like: likeData.data, categories: categoriesData, category: filterCategorie, author: filterAuthor})
   })
 })
 
