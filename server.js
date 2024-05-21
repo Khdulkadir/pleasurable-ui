@@ -60,11 +60,11 @@ app.get("/artikel/:slug", (request, response) => {
   ]).then(([postData, likeData, authorData, categoryData]) => {
 
     let filterCategorie = categoryData.filter(category => {
-      return category.id == articleData[0].categories[0]
+      return category.id == postData[0].categories[0]
     })
 
     let filterAuthor = authorData.filter(author =>{
-      return author.id == articleData[0].author
+      return author.id == postData[0].author
     })
 
     response.render("article", {article: postData, like: likeData.data, categories: categoriesData, category: filterCategorie, author: filterAuthor})
