@@ -5,7 +5,7 @@ searchInputs = document.querySelectorAll(".search-input"),
 searchterm = document.getElementById("searchterm"),
 header2 = document.querySelector(".header2"),
 header3 = document.querySelector(".header3");
-const forms = document.querySelectorAll('form');
+const forms = document.querySelectorAll('form#like-form');
 
 menuButton.addEventListener("click", () => {
     nav.classList.toggle("closed");
