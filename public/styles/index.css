@@ -26,8 +26,8 @@
 }
 
 .article-title {
-  font-family: Inter;
-  font-size: 26px;
+  font-family: var(--font-main);
+  font-size: 32px;
   font-weight: 700;
   color: var(--text-color);
   padding: 20px 0;
@@ -38,9 +38,9 @@
 }
 
 .excerpt {
-  font-family: Inter;
+  font-family: var(--font-alt);
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 300;
   color: var(--text-color);
   overflow: hidden;
 }
@@ -49,7 +49,7 @@
   position: absolute;
   bottom: 20px;
   display: flex;
-  font-family: Inter;
+  font-family: var(--font-alt);
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
@@ -67,7 +67,7 @@
   right: 0;
   background-color: var(--img-text-background-color);
   padding: 3px;
-  font-family: Inter;
+  font-family: var(--font-alt);
   font-size: 13px;
   color: var(--article-background-color);
 }
@@ -83,9 +83,9 @@
 
 .article-date {
   color: var(--article-background-color);
-  font-size: 13px;
-  font-weight: 500;
-  font-family: Inter;
+  font-size: 12px;
+  font-weight: 300;
+  font-family: var(--font-alt);
   text-transform: uppercase;
 }
 
@@ -110,8 +110,8 @@
 }
 
 .sub-article-title {
-  font-family: Inter;
-  font-size: 22px;
+  font-family: var(--font-main);
+  font-size: 28px;
   font-weight: 700;
   color: var(--text-color);
   padding: 20px 0;
@@ -144,7 +144,7 @@
   text-transform: uppercase;
   font-size: 12px;
   font-weight: 700;
-  font-family: Inter;
+  font-family: var(--font-alt);
   color: var(--text-color);
   border-top-color: transparent;
 }
@@ -165,7 +165,7 @@
 }
 
 .sub-article-section-heading {
-  font-family: Inter;
+  font-family: var(--font-alt);
   font-size: 24px;
   font-weight: 700;
   text-transform: uppercase;
@@ -181,7 +181,7 @@
 
 .sub-article-section-link {
   font-size: 13px;
-  font-family: Inter;
+  font-family: var(--font-alt);
   font-weight: 500;
   text-transform: uppercase;
   color: var(--text-color);
@@ -283,7 +283,7 @@
     text-transform: uppercase;
     font-size: 10px;
     font-weight: 700;
-    font-family: Inter;
+    font-family: var(--font-alt);
     color: var(--article-background-color);
     background-color: var(--text-color);
     padding: 3px;
