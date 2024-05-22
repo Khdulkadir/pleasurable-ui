@@ -94,7 +94,7 @@ a {
 }
 
 a:hover {
-  font-weight: bold;
+  color: var(--accent-color1);
   transition: 0.3s;
 }
 
