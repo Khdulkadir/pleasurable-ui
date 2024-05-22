@@ -1,11 +1,8 @@
 const nav = document.querySelector("nav.categories-nav"),
 menuButton = document.querySelector(".menu-button"),
-searchForms = document.querySelectorAll(".search-form"),
-searchInputs = document.querySelectorAll(".search-input"),
-searchterm = document.getElementById("searchterm"),
 header2 = document.querySelector(".header2"),
-header3 = document.querySelector(".header3");
-const forms = document.querySelectorAll('form#like-form');
+header3 = document.querySelector(".header3"),
+forms = document.querySelectorAll('form#like-form');
 
 menuButton.addEventListener("click", () => {
     nav.classList.toggle("closed");
@@ -22,6 +19,7 @@ const observer = new IntersectionObserver(([{isIntersecting}], _) => { //Dit geb
 
 observer.observe(header2) // Kijk naar header2
 
+//Code voor post form
 forms.forEach(function(form) {
   form.addEventListener('submit', function (event) {
     document.getElementById("like-count").classList.add("loading");
