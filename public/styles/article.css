@@ -21,28 +21,29 @@
 }
 
 .article-title {
-  font-family: Inter;
-  font-size: 26px;
-  font-weight: 700;
+  font-family: var(--font-main);
+  font-size: 38px;
+  font-weight: 900;
   text-align: left;
 }
 
 .article-excerpt {
   text-align: left;
-  font-family: Inter;
-  font-size: 18px;
-  line-height: 27px;
+  font-family: var(--font-alt);
+  font-size: 24px;
+  line-height: var(--line-heigth);
 }
 
 .article-content {
-  font-family: Inter;
-  font-size: 16px;
+  font-family: var(--font-main);
+  font-size: 20px;
   text-align: left;
-  line-height: 28px;
+  line-height: var(--line-heigth);
 }
 
 .article-content p {
   margin-bottom: 20px;
+  max-width: var(--line-length);
 }
 
 .article-content a {
@@ -65,7 +66,7 @@
 }
 
 .article-category {
-  font-family: Inter;
+  font-family: var(--font-alt);
   color: var(--accent-color1);
   font-weight: 700;
   text-transform: uppercase;
@@ -73,18 +74,18 @@
 }
 
 .article-post-date {
-  font-family: Inter;
+  font-family: var(--font-alt);
   text-transform: uppercase;
   font-size: 13px;
 }
 
 .article-author-reading-time-container {
   padding: 30px 0;
-  font-family: Inter;
+  font-family: var(--font-alt);
   font-size: 13px;
   text-transform: uppercase;
   text-align: left;
-  line-height: 28px;
+  line-height: var(--line-heigth);
 }
 
 .article-content img {
@@ -101,17 +102,16 @@
 }
 
 .article-content blockquote {
-  font-size: 24px;
+  font-family: var(--font-main);
+  font-size: 38px;
   font-weight: 700;
   padding: 20px 0;
-  position: relative;
   
   &:before {
     content: "‘’";
     color: var(--accent-color1);
+    display: block;
     font-size: 60px;
-    position: absolute;
-    font-family: Arial, Helvetica, sans-serif;
   }
 }
 
