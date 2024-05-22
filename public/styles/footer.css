@@ -58,14 +58,14 @@ footer {
   width: 370px;
   padding: 0px 10px;
   margin-right: 20px;
-  font-family: Inter;
+  font-family: var(--font-alt);
   font-size: 16px;
   font-weight: 400;
 }
 
 .footer-item a {
   color: var(--text-color);
-  font-family: Inter;
+  font-family: var(--font-alt);
   font-size: 13px;
   font-weight: 400;
   transition: 0.3s;
@@ -83,7 +83,7 @@ footer {
 
 .footer-title {
   font-size: 13px;
-  font-family: Inter;
+  font-family: var(--font-alt);
   font-weight: 700;
   text-transform: uppercase;
   color: var(--text-color);
@@ -96,7 +96,7 @@ footer {
 }
 
 .footer-bottom-part-left-text {
-  font-family: Inter;
+  font-family: var(--font-alt);
   font-size: 13px;
   font-weight: 400;
   color: var(--text-color);
@@ -112,7 +112,7 @@ footer {
 }
 
 .footer-bottom-part-right-item a {
-  font-family: Inter;
+  font-family: var(--font-alt);
   font-size: 13px;
   font-weight: 400;
   color: var(--text-color);
