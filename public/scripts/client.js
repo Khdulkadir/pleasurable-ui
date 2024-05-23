@@ -23,8 +23,8 @@ observer.observe(header2) // Kijk naar header2
 
 // Code voor podcast
 if (iframe) {
-  imageContainer.firstElementChild.remove();
-  imageContainer.appendChild(iframe);
+  imageContainer.firstElementChild.remove(); //remove img
+  imageContainer.appendChild(iframe); //give img container new child iframe
 }
 
 // Code voor post form
