@@ -19,14 +19,13 @@ const observer = new IntersectionObserver(([{isIntersecting}], _) => { //Dit geb
     }
 })
 
+observer.observe(header2) // Kijk naar header2
+
 // Code voor podcast
 if (iframe) {
-  imageContainer.innerHTML = iframe
-  imageContainer.innerHTML = iframe.outerHTML
-  iframe.remove()
+  imageContainer.firstElementChild.remove();
+  imageContainer.appendChild(iframe);
 }
-
-observer.observe(header2) // Kijk naar header2
 
 // Code voor post form
 forms.forEach(function(form) {
