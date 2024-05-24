@@ -2,7 +2,10 @@ const nav = document.querySelector("nav.categories-nav"),
 menuButton = document.querySelector(".menu-button"),
 header2 = document.querySelector(".header2"),
 header3 = document.querySelector(".header3"),
-forms = document.querySelectorAll('form#like-form');
+forms = document.querySelectorAll('form#like-form'),
+iframe = document.querySelector(".article-content iframe"),
+imageContainer = document.querySelector(".article-featured-image-container");
+
 
 menuButton.addEventListener("click", () => {
     nav.classList.toggle("closed");
@@ -19,7 +22,13 @@ const observer = new IntersectionObserver(([{isIntersecting}], _) => { //Dit geb
 
 observer.observe(header2) // Kijk naar header2
 
-//Code voor post form
+// Code voor podcast
+if (iframe) {
+  imageContainer.firstElementChild.remove(); //remove img
+  imageContainer.appendChild(iframe); //give img container new child iframe
+}
+
+// Code voor post form
 forms.forEach(function(form) {
   form.addEventListener('submit', function (event) {
     document.getElementById("like-count").classList.add("loading");
