@@ -179,12 +179,14 @@
 
 /* #endregion Like */
 
+iframe {
+  height:30rem;
+  margin-bottom: -4rem;
+}
+
 @media only screen and (min-width: 800px) {
   .article-page{
     margin: var(--margin-center);
   }
-  
-  iframe {
-  height:30rem;
-  margin-bottom: -4rem;
 }
+

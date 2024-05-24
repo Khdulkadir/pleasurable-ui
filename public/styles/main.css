@@ -238,6 +238,16 @@ button img {
   display: block;
   fill: var(--text-color);
 }
+
+/* #region Progress bar */
+.progress-bar {
+  position: absolute;
+  left: 0;
+  height: 8px;
+  background: var(--accent-color1);
+  width: 0vw;
+}
+/* #endregion Progress bar */
 /* #endregion Header3 */
 
 header:has(.categories-nav.closed) .menu-button {
