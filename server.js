@@ -163,7 +163,10 @@ app.get('/auteur/:slug', function (request, response) {
 // Search
 app.get('/search', (request, response) => {
   const searchterm = request.query.q
-  fetchJson(`${postsUrl}?search=${searchterm}`).then((posts) => {
-      response.render('search', {posts, categories: categoriesData, searchterm})
+  fetchJson(`${postsUrl}?search=${searchterm}`).then((postData) => {
+    for (var i=0; i < postData.length; i++) {
+      eval(date.get('day-month-year'))
+    }
+      response.render('search', {posts: postData, categories: categoriesData, searchterm})
   })
 })

@@ -4,7 +4,9 @@ const nav = document.querySelector("nav.categories-nav"),
       header2 = document.querySelector(".header2"),
       header3 = document.querySelector(".header3"),
       progressBar = document.querySelector("#myBar"),
-      forms = document.querySelectorAll("form#like-form");
+      forms = document.querySelectorAll("form#like-form"),
+      iframe = document.querySelector(".article-content iframe"),
+      imageContainer = document.querySelector(".article-featured-image-container");
 
 menuButton.addEventListener("click", () => {
     nav.classList.toggle("closed");
@@ -36,6 +38,24 @@ function scrollBar() {
   progressBar.style.width = scrolled + "vw"; // Verander de width in css naar scrolled vw
 }
 // #endregion Progress bar
+
+// Code voor fade-in effect
+document.querySelectorAll('.fade-in').forEach(function(fadeElement) {
+    new IntersectionObserver(function(entries, observer) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 }).observe(fadeElement);
+});
+
+// Code voor podcast
+if (iframe) {
+  imageContainer.firstElementChild.remove(); //remove img
+  imageContainer.appendChild(iframe); //give img container new child iframe
+}
 
 // #region Code voor post form
 forms.forEach(function(form) {
