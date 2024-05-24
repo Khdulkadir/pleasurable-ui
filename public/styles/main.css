@@ -180,6 +180,10 @@ header {
 .header3 {
   background-color: var(--background-color);
   z-index: 1;
+
+  .search-form {
+    display: none;
+  }
 }
 
 .categories-nav {
@@ -195,10 +199,6 @@ header {
 .categories-nav.closed {
   left: -67vw;
   transition: left 0.3s;
-}
-
-.search-form {
-  display: none;
 }
 
 .categories {
@@ -256,22 +256,30 @@ header:has(.categories-nav.closed) .menu-button {
 
 .fixed {
   position: fixed;
+  animation: slideDown 0.35s ease-out;
 
   .categories-nav {
     .categories {
       margin-bottom: 0;
+      margin-top: 0;
     }
 
     .search-form {
-      display: block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 }
 
-.search-form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 
 .search-form input {
