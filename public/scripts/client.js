@@ -2,9 +2,10 @@ const nav = document.querySelector("nav.categories-nav"),
 menuButton = document.querySelector(".menu-button"),
 header2 = document.querySelector(".header2"),
 header3 = document.querySelector(".header3"),
-forms = document.querySelectorAll('form'),
+forms = document.querySelectorAll('form#like-form'),
 iframe = document.querySelector(".article-content iframe"),
 imageContainer = document.querySelector(".article-featured-image-container");
+
 
 menuButton.addEventListener("click", () => {
     nav.classList.toggle("closed");

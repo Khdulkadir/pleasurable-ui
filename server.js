@@ -36,6 +36,32 @@ const redpersUrl = 'https://redpers.nl/wp-json/wp/v2/',
         {"id": 94, "name": "Wetenschap", "slug": "wetenschap"},
       ];
 
+// Datum
+const date = new Map();
+const getDate = `day = parsedDate.getDate(), 
+  short = {month: "short"},
+  long = {month: "long"}, 
+  monthShort = Intl.DateTimeFormat("nl-NL", short).format(parsedDate), 
+  monthLong = Intl.DateTimeFormat("nl-NL", long).format(parsedDate),
+  year = parsedDate.getFullYear(),
+  hours = (parsedDate.getHours() < 10 ? '0' : ' ') + parsedDate.getHours(), 
+  minutes = (parsedDate.getMinutes() < 10 ? '0' : '') + parsedDate.getMinutes(), 
+  time = hours + ':' + minutes, 
+  dayMonth = day + ' ' + monthShort,
+  dayMonthYear = day + ' ' + monthLong + ' ' + year,
+  fullDate = day + ' ' + monthLong + ' ' + year + ', ' + time;`
+
+date.set('day-month', `const parsedDate = new Date(postData[i].date),
+  ${getDate}
+  postData[i].date = dayMonth`);
+
+date.set('day-month-year', `const parsedDate = new Date(postData[i].date),
+  ${getDate}
+  postData[i].date = dayMonthYear`)
+
+date.set('full-date', `const parsedDate = new Date(postData[0].date),
+  ${getDate}
+  postData[0].date = fullDate`)
 /*** Routes & data ***/
 
 //Index route
@@ -46,6 +72,11 @@ app.get('/', (request, response) => {
     )),
     fetchJson(`${postsUrl}?per_page=4`)
   ]).then(([postData, featuredData]) => {
+
+    // for (var i=0; i < postData.length; i++) {
+    //   eval(date.get('day-month'))
+    // }
+
     response.render('index', { categories: categoriesData, posts: postData, featured: featuredData });
   })
 })
@@ -54,21 +85,23 @@ app.get('/', (request, response) => {
 app.get("/artikel/:slug", (request, response) => {
   const slugdirectus = encodeURIComponent(request.params.slug)
   Promise.all([
-    fetchJson(`${postsUrl}/?slug=${request.params.slug}&_fields=date,slug,title,author,content,excerpt,categories,yoast_head_json,yoast_head_json.author,yoast_head_json.twitter_misc,yoast_head_json.og_image`),
+    fetchJson(`${postsUrl}/?slug=${request.params.slug}&_fields=date,slug,title,author,content,excerpt,categories,yoast_head,yoast_head_json`),
     fetchJson(`${directusUrl}?filter={"slug":"${slugdirectus}"}`),
     fetchJson(`${authorUrl}?_fields=id,slug,name,description,avatar_urls&per_page=100`),
     fetchJson(`${categoriesUrl}?_fields=id,name,slug&per_page=100`)
-  ]).then(([articleData, likeData, authorData, categoryData]) => {
+  ]).then(([postData, likeData, authorData, categoryData]) => {
 
     let filterCategorie = categoryData.filter(category => {
-      return category.id == articleData[0].categories[0]
+      return category.id == postData[0].categories[0]
     })
 
     let filterAuthor = authorData.filter(author =>{
-      return author.id == articleData[0].author
+      return author.id == postData[0].author
     })
 
-    response.render("article", {article: articleData, like: likeData.data, categories: categoriesData, category: filterCategorie, author: filterAuthor})
+    eval(date.get('full-date'))
+
+    response.render("article", {article: postData, like: likeData.data, categories: categoriesData, category: filterCategorie, author: filterAuthor})
   })
 })
 
@@ -102,6 +135,10 @@ app.get('/categorie/:slug', function (request, response) {
     fetchJson(`${categoriesUrl}/?slug=${request.params.slug}&_fields=name,yoast_head`)
   ]).then(([postData, category]) => {
 
+    for (var i=0; i < postData.length; i++) {
+      eval(date.get('day-month-year'))
+    }
+    
     response.render('category', {posts: postData, category: category, categories: categoriesData});
   })
 })
@@ -115,6 +152,10 @@ app.get('/auteur/:slug', function (request, response) {
         return post.author == authorData[0].id
       })
 
+      for (var i=0; i < postData.length; i++) {
+        eval(date.get('day-month'))
+      }
+
       response.render('author', {author: authorData, posts: filterPost, categories: categoriesData })
     })
 })  
@@ -122,7 +163,10 @@ app.get('/auteur/:slug', function (request, response) {
 // Search
 app.get('/search', (request, response) => {
   const searchterm = request.query.q
-  fetchJson(`${postsUrl}?search=${searchterm}`).then((posts) => {
-      response.render('search', {posts, categories: categoriesData, searchterm})
+  fetchJson(`${postsUrl}?search=${searchterm}`).then((postData) => {
+    for (var i=0; i < postData.length; i++) {
+      eval(date.get('day-month-year'))
+    }
+      response.render('search', {posts: postData, categories: categoriesData, searchterm})
   })
 })
