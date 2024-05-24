@@ -22,6 +22,18 @@ const observer = new IntersectionObserver(([{isIntersecting}], _) => { //Dit geb
 
 observer.observe(header2) // Kijk naar header2
 
+// Code voor fade-in effect
+document.querySelectorAll('.fade-in').forEach(function(fadeElement) {
+    new IntersectionObserver(function(entries, observer) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 }).observe(fadeElement);
+});
+
 // Code voor podcast
 if (iframe) {
   imageContainer.firstElementChild.remove(); //remove img
