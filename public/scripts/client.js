@@ -4,9 +4,7 @@ const nav = document.querySelector("nav.categories-nav"),
       header2 = document.querySelector(".header2"),
       header3 = document.querySelector(".header3"),
       progressBar = document.querySelector("#myBar"),
-      forms = document.querySelectorAll("form#like-form"),
-      iframe = document.querySelector(".article-content iframe"),
-      imageContainer = document.querySelector(".article-featured-image-container");
+      forms = document.querySelectorAll("form#like-form");
 
 menuButton.addEventListener("click", () => {
     nav.classList.toggle("closed");
@@ -50,12 +48,6 @@ document.querySelectorAll('.fade-in').forEach(function(fadeElement) {
         });
     }, { threshold: 0.1 }).observe(fadeElement);
 });
-
-// Code voor podcast
-if (iframe) {
-  imageContainer.firstElementChild.remove(); //remove img
-  imageContainer.appendChild(iframe); //give img container new child iframe
-}
 
 // #region Code voor post form
 forms.forEach(function(form) {
