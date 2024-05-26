@@ -177,6 +177,45 @@
   100%  {transform:scaleY(-1) rotate(-135deg)}
 }
 
+@keyframes growing-circle {
+  from {
+    transform: scale(0);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes thumbs-up {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translateY(-0.5rem) rotate(-20deg) scale(1.25);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+}
+
+#like-button:has(.success)::before {
+  content: "";
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid blue;
+  border-radius: 1rem;
+  margin-bottom: -1.1rem;
+  opacity: 0;
+  animation: growing-circle 500ms linear 0s;
+}
+
+#like-button:has(.success) svg {
+  animation: thumbs-up 250ms ease-in-out 0s;
+}
+
 /* #endregion Like */
 
 iframe {
