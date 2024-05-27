@@ -1,3 +1,17 @@
+<%
+let articleContent = article[0].content.rendered;
+
+// zoek de iframe door middel van indexOf, en seleceer met substring
+const iframeStart = articleContent.indexOf("<iframe"); // als er geen iframe is returnt indexOf -1
+const iframeEnd = articleContent.indexOf("</iframe>") + 9; // voeg 9 toe om de sluittag ook mee te nemen
+const iframe = articleContent.substring(iframeStart, iframeEnd);
+
+if (iframeStart > -1) { // als er geen iframe is returnt indexOf -1
+  // haal de iframe weg uit de article content door alles te laden behalve de iframe
+  articleContent = articleContent.substring(0, iframeStart) + articleContent.substring(iframeEnd);
+}
+%>
+
 <%- include('./partials/head') %>
   <link rel="stylesheet" href="/styles/footer.css">
   <link rel="stylesheet" href="/styles/article.css">
@@ -11,12 +25,17 @@
     <div class="article-page-container">
       <article class="article-page">
         <div class="article-featured-image-container">
-          <img class="article-featured-image"
+          <% if (iframeStart > -1) { %>
+            <%- iframe %>
+          <% } else { %>
+            <img
+            class="article-featured-image"
             src="<%= article[0].yoast_head_json.og_image[0].url %>"
             alt="<%= article[0].yoast_head_json.schema['@graph'][2].caption %>"
             width="<%= article[0].yoast_head_json.og_image[0].width %>"
             height="<%= article[0].yoast_head_json.og_image[0].height %>"
             />
+          <% } %>
         </div>
 
         <div class="article-category-date-like-container">
@@ -65,7 +84,7 @@
         </div>
 
         <div class="article-content">
-          <%- article[0].content.rendered %>
+          <%- articleContent %>
         </div>
       </article>
     </div>
