@@ -141,6 +141,12 @@ header {
   padding: 1.5rem 2rem;
 }
 
+.search-form button a, .newsletter {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+}
+
 .newsletter-search {
   display: flex;
   gap: 1rem;
@@ -342,17 +348,23 @@ header:has(.categories-nav.closed) .menu-button {
   main {
     margin-top: 0;
   }
-
   header {
     display: flex;
     flex-direction: column;
     align-items: center;
-      
-    .header1 {
+    
+    .header1-wrapper {
       width: 100%;
+      background-color: black;
+    }
+
+    .header1 {
+      width: 1200px;
       display: flex;
       justify-content: end;
       align-items: center;
+      margin: 0 auto;
+      max-width: 100%;
     }
 
     .header2 {
