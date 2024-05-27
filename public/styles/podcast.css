@@ -1,0 +1,183 @@
+
+  .article-page {
+    text-align: center;
+    max-width: 800px;
+    margin: 1rem;
+    color: var(--text-color);
+  }
+  
+  .article-title-container {
+    padding: 20px 0;
+  }
+  
+  .article-title {
+    font-family: var(--font-main);
+    font-size: 38px;
+    font-weight: 900;
+    text-align: left;
+  }
+  
+  .article-excerpt {
+    text-align: left;
+    font-family: var(--font-alt);
+    font-size: 24px;
+    line-height: var(--line-heigth);
+  }
+  
+  .article-content {
+    font-family: var(--font-main);
+    font-size: 20px;
+    text-align: left;
+    line-height: var(--line-heigth);
+  }
+  
+  .article-content p {
+    margin-bottom: 20px;
+    max-width: var(--line-length);
+  }
+  
+  .article-content a {
+    display: inline;
+  }
+  
+  .article-content h4 {
+    font-size: 24px;
+  }
+  
+  .article-category-date-container {
+    display: flex;
+    justify-content: start;
+    gap: 20px;
+  }
+  
+  .article-category-date-like-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .article-category {
+    font-family: var(--font-alt);
+    color: var(--accent-color1);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 13px;
+  }
+  
+  .article-post-date {
+    font-family: var(--font-alt);
+    text-transform: uppercase;
+    font-size: 13px;
+  }
+  
+  .article-author-reading-time-container {
+    padding: 30px 0;
+    font-family: var(--font-alt);
+    font-size: 13px;
+    text-transform: uppercase;
+    text-align: left;
+    line-height: var(--line-heigth);
+  }
+  
+  .article-content img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: center center;
+  }
+  
+  .article-content figcaption {
+    font-size: 13px;
+    font-style: italic;
+    padding-bottom: 20px;
+  }
+  
+  .article-content blockquote {
+    font-family: var(--font-main);
+    font-size: 38px;
+    font-weight: 700;
+    padding: 20px 0;
+    
+    &:before {
+      content: "‘’";
+      color: var(--accent-color1);
+      display: block;
+      font-size: 60px;
+    }
+  }
+  
+  /* #region Like */
+  #like {
+    font-family: Inter;
+    font-size: 13px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s;
+    
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+  
+  #like span svg {
+    margin-right: 5px;
+    vertical-align: -3px;
+    fill: var(--text-color);
+  }
+  
+  #like-count.success {
+    color: var(--accent-color1);
+    font-weight: 700;
+  }
+  
+  #like-count.loading {
+    color: transparent;
+  }
+  
+  #like-icon.success {
+    fill: var(--accent-color1);
+  }
+  
+  .loading {
+    width: 16px;
+    height: 16px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 4px solid var(--accent-color1);
+    display: inline-block;
+    vertical-align: -5px;
+    animation:
+      l20-1 0.8s infinite linear alternate,
+      l20-2 1.6s infinite linear;
+  }
+  
+  @keyframes l20-1{
+    0%    {clip-path: polygon(50% 50%,0       0,  50%   0%,  50%    0%, 50%    0%, 50%    0%, 50%    0% )}
+    12.5% {clip-path: polygon(50% 50%,0       0,  50%   0%,  100%   0%, 100%   0%, 100%   0%, 100%   0% )}
+    25%   {clip-path: polygon(50% 50%,0       0,  50%   0%,  100%   0%, 100% 100%, 100% 100%, 100% 100% )}
+    50%   {clip-path: polygon(50% 50%,0       0,  50%   0%,  100%   0%, 100% 100%, 50%  100%, 0%   100% )}
+    62.5% {clip-path: polygon(50% 50%,100%    0, 100%   0%,  100%   0%, 100% 100%, 50%  100%, 0%   100% )}
+    75%   {clip-path: polygon(50% 50%,100% 100%, 100% 100%,  100% 100%, 100% 100%, 50%  100%, 0%   100% )}
+    100%  {clip-path: polygon(50% 50%,50%  100%,  50% 100%,   50% 100%,  50% 100%, 50%  100%, 0%   100% )}
+  }
+  
+  @keyframes l20-2{ 
+    0%    {transform:scaleY(1)  rotate(0deg)}
+    49.99%{transform:scaleY(1)  rotate(135deg)}
+    50%   {transform:scaleY(-1) rotate(0deg)}
+    100%  {transform:scaleY(-1) rotate(-135deg)}
+  }
+  
+  /* #endregion Like */
+  
+  iframe {
+    height:30rem;
+    margin-bottom: -4rem;
+  }
+  
+  @media only screen and (min-width: 800px) {
+    .article-page{
+      margin: var(--margin-center);
+    }
+  }
+  
+  
