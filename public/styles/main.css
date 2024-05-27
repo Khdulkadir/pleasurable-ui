@@ -80,6 +80,7 @@
 
 body {
   background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 main {
@@ -154,7 +155,6 @@ header {
   vertical-align: middle;
   font-family: var(--font-alt);
   text-transform: uppercase;
-  color: var(--text-color);
 }
 
 .date-and-tagline p {
