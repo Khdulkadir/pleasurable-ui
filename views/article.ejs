@@ -52,9 +52,24 @@
         
         <div class="article-author-reading-time-container">
           <% if (author[0]) { %>
-            <p class="article-author">Auteur:
+            <div class="article-author">Auteur:
               <a href="/auteur/<%= author[0].slug %>"><strong><%= author[0].name %></strong></a>
-            </p>
+            </div>
+            
+            <input type="checkbox" id="meer-info" class="meer-info" />
+            <label for="meer-info" class="popup-label">i</label>
+
+            <div class="author-popup">
+              <% if (author[0].avatar_urls) { %>
+                <img src="<%= author[0].avatar_urls["96"] %>" alt="avatar van <%= author[0].name %>" width="96" height="96">
+              <% } else { %>
+                <img src="/assets/errorimg.png" alt="kan avatar niet laden" width="96" height="96">
+              <% } %> 
+              <section>
+                <h3><%= author[0].name %></h3>
+                <p><%- author[0].description %></p>
+              </section>
+            </div>
           <% } else { %>
             <p class="article-author">Auteur: 
               <strong><%= article[0].yoast_head_json.author %></strong>
