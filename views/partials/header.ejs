@@ -1,5 +1,45 @@
 <header>
   <div class="header1">
+    <button onclick="toggleDarkMode()">
+    <svg id="light-icon" width="30" height="30">
+      <circle cx="15" cy="15" r="8" fill="white" />
+    
+      <line
+      id="ray"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      x1="15"
+      y1="1"
+      x2="15"
+      y2="3"
+    ></line>
+  
+    <use href="#ray" transform="rotate(45 15 15)" />
+    <use href="#ray" transform="rotate(90 15 15)" />
+    <use href="#ray" transform="rotate(135 15 15)" />
+    <use href="#ray" transform="rotate(180 15 15)" />
+    <use href="#ray" transform="rotate(225 15 15)" />
+    <use href="#ray" transform="rotate(270 15 15)" />
+    <use href="#ray" transform="rotate(315 15 15)" />
+    </svg> 
+    <svg id="dark-icon" width="30" height="30">
+      <path
+        stroke="white"
+        fill="white"
+        d="
+          M 15, 6
+          A 9 9 0 1 0 15, 24
+          A 12 12 0 0 1 15, 5"
+      />
+      <path
+        stroke="white"
+        d="
+          M 15, 6
+          A 9 9 0 0 1 15, 24"
+      />
+    </svg> 
+    </button> 
     <nav>
       <a href="#">Colofon</a>
       <a href="#">Over</a>

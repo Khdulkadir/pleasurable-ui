@@ -84,7 +84,7 @@ body {
 }
 
 main {
-  max-width: 1200px;
+  max-width: 1240px;
   margin: var(--margin-center);
   margin-top: 6rem;
 }
@@ -106,6 +106,7 @@ header {
   background-color: var(--background-color);
   z-index: 1;
   font-family: var(--font-alt);
+  letter-spacing: 1px;
   text-transform: uppercase;
   font-size: small;
 }
@@ -115,8 +116,10 @@ header {
   display: none;
   background-color: black;
   border-bottom: var(--border);
-  padding-right: 1rem;
+  padding-right: 6rem;
   height: 2.5rem;
+  display: flex;
+  gap: 1.5rem;
 }
 
 .header1 a {
@@ -129,7 +132,7 @@ header {
 
 .header1 nav {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 /* #endregion Header1 */
 
@@ -138,7 +141,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 2rem;
+  padding: 2.5rem 2rem;
 }
 
 .newsletter-search {
@@ -205,7 +208,7 @@ header {
   border: var(--border);
   display: flex;
   flex-direction: column;
-  margin: 1rem;
+  margin-bottom: 1rem;
   padding: 2rem;
   gap: 3rem;
   align-items: center;
@@ -371,7 +374,7 @@ header:has(.categories-nav.closed) .menu-button {
 
     .header3 {
       width: 100%;
-      max-width: 80rem;
+      max-width: 1240px;
       
       .donate-and-newsletter {
         display: none;
@@ -380,7 +383,7 @@ header:has(.categories-nav.closed) .menu-button {
       .categories-nav, .categories-nav.closed {
         position: unset;
         height: unset;
-        width: calc(100% - 3rem);
+        width: 100%;
 
         .categories {
           height: unset;
@@ -417,6 +420,32 @@ header:has(.categories-nav.closed) .menu-button {
 
   .logo {
   filter: invert(1);
+  }
+
+  a:hover {
+    color: var(--alt-text-color);
+  }
+
+  .footer-item a:hover {
+    color: var(--alt-text-color);
+  }
+}
+
+.dark-mode {
+  --background-color: #230606;
+  --article-background-color: #000000;
+  --img-text-background-color: #f4f0e6b9;
+  --text-color: #F4F0E6;
+  --alt-text-color: #ff5640;
+  --light-border-color: #ffdede;
+  --accent-color1: #ECF3B0;
+  --accent-color2: #5340e8;
+  --accent-color3: #f2d930; /*Mischien als accent color 1 doen*/
+  --accent-color4: #f9cdc8;
+  --border: solid var(--text-color) 1px;
+
+  .logo {
+    filter: invert(1);
   }
 
   a:hover {
