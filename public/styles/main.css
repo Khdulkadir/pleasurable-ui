@@ -30,7 +30,7 @@
   font-family: "Tiempos";
   font-style: normal;
   font-weight: 400;
-  src: url(/assets/TiemposText-Regular.ttf) format("ttf");
+  src: url("/assets/fonts/TiemposText-Regular.woff2") format("woff2");
 }
 
 /* TiemposHeadline */
@@ -39,7 +39,7 @@
   font-family: "Tiempos";
   font-style: normal;
   font-weight: 700;
-  src: url(/assets/TiemposHeadline-Medium.ttf) format("ttf");
+  src: url("/assets/fonts/TiemposHeadline-Medium.woff2") format("woff2");
 }
 /* #endregion Fonts */
 
@@ -115,7 +115,6 @@ header {
   display: none;
   background-color: black;
   border-bottom: var(--border);
-  padding-right: 1rem;
   height: 2.5rem;
 }
 
@@ -382,8 +381,8 @@ header:has(.categories-nav.closed) .menu-button {
     }
 
     .header3 {
-      width: 100%;
-      max-width: 80rem;
+      width: 1200px;
+      max-width: 100%;
       
       .donate-and-newsletter {
         display: none;
@@ -441,3 +440,64 @@ header:has(.categories-nav.closed) .menu-button {
 }
 /* #endregion Media */
 
+.newsletter-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+
+input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.newsletter-popup {z-index: 1;}
+
+#newsletter-popup {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+/* Your existing CSS styles for the popup */
+
+#subscribeBtn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+#subscribeBtn:hover {
+  background-color: #0056b3;
+}
+
+/* Show popup when checkbox is checked */
+.popup-checkbox:checked ~ .newsletter-popup {
+  display: block;
+}
