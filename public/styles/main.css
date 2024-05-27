@@ -69,6 +69,8 @@
 
   --font-main: Tiempos, 'Source serif 4';
   --font-alt: Inter, 'sans-serif';
+
+  --darkmode-transition: filter 0.5s, color 0.5s, background-color 0.5s, border-color 0.5s;
 }
 
 * {
@@ -76,6 +78,7 @@
   scroll-behavior: smooth;
   margin: 0;
   padding: 0;
+  transition: var(--darkmode-transition);
 }
 
 body {
@@ -96,7 +99,6 @@ a {
 
 a:hover {
   color: var(--accent-color1);
-  transition: 0.3s;
 }
 
 /* #region Header */
@@ -171,7 +173,7 @@ header {
 .logo {
   width: 150px;
   height: 35px;
-  transition: 0.3s;
+  transition: opacity 0.3s, var(--darkmode-transition);
 }
 
 .logo:hover {
@@ -196,12 +198,12 @@ header {
   left: 0;
   width: min(67vw, 25rem);
   height: calc(100vh - 3rem - 43.4px);
-  transition: left 0.3s;
+  transition: left 0.3s, var(--darkmode-transition);
 }
 
 .categories-nav.closed {
   left: -67vw;
-  transition: left 0.3s;
+  transition: left 0.3s, var(--darkmode-transition);
 }
 
 .categories {
@@ -308,12 +310,12 @@ header:has(.categories-nav.closed) .menu-button {
   .fade-in {
       opacity: 0;
       transform: translateY(20px);
-      transition: opacity 0.6s, transform 0.6s;
+      transition: opacity 0.6s, transform 0.6s, var(--darkmode-transition);
   }
 
   .fade-in.visible {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateY(0), var(--darkmode-transition);
   }
 }
 /* #endregion fadein */
