@@ -101,7 +101,13 @@ app.get("/artikel/:slug", (request, response) => {
 
     eval(date.get('full-date'))
 
-    response.render("article", {article: postData, like: likeData.data, categories: categoriesData, category: filterCategorie, author: filterAuthor})
+    if (postData[0].categories.some(category => category === 590)){ 
+      response.render("gallery", {article: postData, like: likeData.data, categories: categoriesData, category: filterCategorie, author: filterAuthor})
+    } else if (postData[0].categories.some(category => category === 3211)){
+      response.render("podcast", {article: postData, like: likeData.data, categories: categoriesData, category: filterCategorie, author: filterAuthor})
+    } else {
+      response.render("article", {article: postData, like: likeData.data, categories: categoriesData, category: filterCategorie, author: filterAuthor})
+    }
   })
 })
 
