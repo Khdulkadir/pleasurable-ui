@@ -80,3 +80,18 @@ forms.forEach(function(form) {
   });
 });
 // #endregion Code voor post form
+
+
+// #region Code voor nieuwsbrief popup
+  const checkbox = document.getElementById('popup-checkbox');
+  const popup = document.querySelector('.newsletter-popup');
+
+  checkbox.addEventListener('change', () => {
+    if (checkbox.checked) {
+      popup.classList.add('open');
+    }
+    else {
+      popup.classList.remove('open');
+    }
+  });
+// #endregion Code voor nieuwsbrief popup

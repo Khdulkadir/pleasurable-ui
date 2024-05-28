@@ -517,9 +517,22 @@ input[type="email"] {
   opacity: 0;
 }
 
-/* Show popup when checkbox is checked */
 .popup-checkbox:checked ~ .newsletter-popup {
   display: block;
+}
+
+@keyframes fancyOpen {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) rotate(-10deg) translate(-50%, -50%);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg) translate(-50%, -50%);
+  }
+}
+.newsletter-popup.open {
+  animation: fancyOpen 0.6s forwards;
 }
 
 /* #endregion nieuwsbrief */
