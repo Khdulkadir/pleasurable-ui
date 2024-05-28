@@ -51,8 +51,12 @@ forms.forEach(function(form) {
 });
 
 // #region author popup
-const target = document.querySelector(".author-popup");
+const popup = document.querySelector(".author-popup"),
+      moreInfo = document.querySelector(".meer-info");
 
+function scroll() {
+  
+}
 
 console.log(target)
 // #endregion author popup
