@@ -1,8 +1,10 @@
 const nav = document.querySelector("nav.categories-nav"),
-menuButton = document.querySelector(".menu-button"),
-header2 = document.querySelector(".header2"),
-header3 = document.querySelector(".header3"),
-forms = document.querySelectorAll('form#like-form');
+      menuButton = document.querySelector(".menu-button"),
+      header2 = document.querySelector(".header2"),
+      header3 = document.querySelector(".header3"),
+      forms = document.querySelectorAll('form#like-form'),
+      popup = document.querySelector(".author-popup"),
+      moreInfo = document.querySelector(".meer-info");
 
 menuButton.addEventListener("click", () => {
     nav.classList.toggle("closed");
@@ -51,12 +53,11 @@ forms.forEach(function(form) {
 });
 
 // #region author popup
-const popup = document.querySelector(".author-popup"),
-      moreInfo = document.querySelector(".meer-info"),
-      target = document.popup.scrollHeight;
+moreInfo.addEventListener("click", scroll)
 
 function scroll() {
+  if (moreInfo.checked) {
+    popup.scrollIntoView({behavior: "smooth"});
+  } 
 }
-
-console.log(target)
 // #endregion author popup

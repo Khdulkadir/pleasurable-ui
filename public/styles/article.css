@@ -109,7 +109,9 @@
   max-width: 500px;
   bottom: 100%;
   left: 0;
+  scroll-margin: 200px;
 }
+
 .article-author .author-popup picture{
   display: block;
   width: fit-content;
@@ -161,6 +163,34 @@ fieldset:has(:focus-visible) {
 
 .popup-label {
   cursor: pointer;
+
+  &:before{
+    position: relative;
+    content: "✧";
+    visibility: hidden;
+    font-size: 13px;
+  }
+}
+
+.popup-label:hover, .meer-info:checked ~ .popup-label {
+  &:before{
+    visibility: visible;
+    color: var(--accent-color1);
+    font-size: 13px;
+    top: -23px;
+    left: 29px;
+    animation: sparkle .2s ease-in-out forwards;
+  }
+
+  &:after {
+    position: relative;
+    content: "✧";
+    color: var(--accent-color1);
+    font-size: 10px;
+    top: -17px;
+    left: -8px;
+    animation: special .2s ease-in-out;
+  }
 }
 
 .popup-label svg {
@@ -280,6 +310,45 @@ fieldset:has(:focus-visible) {
   100% {
     opacity: 1;
     bottom: 100%;
+  }
+}
+
+@keyframes special {
+  0% {
+    top: -11px;
+    left: -20px;
+    opacity: 0;
+  }
+  30%{
+    opacity: 1;
+  }
+  50%{
+    top: -13px;
+    left: -3px;
+  }
+  100% {
+    top: -17px;
+    left: -8px;
+    opacity: 1;
+  }
+}
+
+@keyframes sparkle {
+  0% {
+    top: -8px;
+    left: 18px;
+    opacity: 0;
+  }
+  30%{
+    opacity: 1;
+  }
+  50%{
+    top: -33px;
+    left: -23px;
+  }
+  100% {
+    top: -23px;
+    left: 29px;
   }
 }
 /* #endregion Keyframes */
