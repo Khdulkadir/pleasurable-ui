@@ -461,7 +461,7 @@ header:has(.categories-nav.closed) .menu-button {
   font-size: 40px;
 }
 
-input[type="email"] {
+.newsletter-popup form input[type="email"] {
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
