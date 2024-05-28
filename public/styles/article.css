@@ -169,7 +169,7 @@
   visibility: hidden;
   position: absolute;
   z-index: 1;
-  background-color: var(--background-color);
+  background-color: var(--accent-color2);
   display: flex;
   width: 500px;
   height: 175px;
@@ -177,7 +177,6 @@
   left: 50%;
   margin-left: -300px;
   border-radius: 25px;
-  text-transform: unset;
 }
 
 .article-author-reading-time-container .author-popup img{
@@ -194,6 +193,7 @@
 
 .article-author-reading-time-container .author-popup section h3{
   font-family: var(--font-alt);
+  text-transform: none;
 }
 
 .article-author-reading-time-container .author-popup p{
@@ -202,9 +202,11 @@
   -webkit-line-clamp: 5;
   border: none;
   font-size: var(--font-size-small);
+  line-height: 1.5;
   overflow: hidden;
   text-overflow: ellipsis;
   padding-top: .5rem;
+  text-transform: none;
 }
 
 .meer-info:checked ~ .author-popup{

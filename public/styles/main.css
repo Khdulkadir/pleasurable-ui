@@ -51,9 +51,9 @@
   --alt-text-color: #757575;
   --light-border-color: #9b9b9b94;
   --accent-color1: #D5302D;
-  --accent-color2: #5340e8;
+  --accent-color2: #f4a8a1;
   --accent-color3: #f2d930;
-  --accent-color4: #f9cdc8;
+  --accent-color4: #5340e8;
 
   --thumbnail-width: 100%;
   --thumbnail-height: 200px;
@@ -103,7 +103,7 @@ header {
   top: 0;
   width: 100%;
   background-color: var(--background-color);
-  z-index: 1;
+  z-index: 2;
   font-family: var(--font-alt);
   text-transform: uppercase;
   font-size: small;
@@ -179,7 +179,7 @@ header {
 /* #region Header3 */
 .header3 {
   background-color: var(--background-color);
-  z-index: 1;
+  z-index: 2;
 }
 
 .categories-nav {
@@ -376,9 +376,9 @@ header:has(.categories-nav.closed) .menu-button {
     --alt-text-color: #ff5640;
     --light-border-color: #ffdede;
     --accent-color1: #ECF3B0;
-    --accent-color2: #5340e8;
+    --accent-color2: #823130;
     --accent-color3: #f2d930; /*Mischien als accent color 1 doen*/
-    --accent-color4: #f9cdc8;
+    --accent-color4: #5340e8;
   }
 
   .logo {
