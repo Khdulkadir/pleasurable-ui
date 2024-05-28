@@ -447,7 +447,7 @@ header:has(.categories-nav.closed) .menu-button {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 30px;
+  padding: 25px;
   background-color: var(--article-background-color);
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
