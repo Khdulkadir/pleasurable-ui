@@ -179,7 +179,7 @@ fieldset:has(:focus-visible) {
     font-size: 13px;
     top: -23px;
     left: 29px;
-    animation: sparkle .2s ease-in-out forwards;
+    animation: sparkle .2s ease-in-out;
   }
 
   &:after {
