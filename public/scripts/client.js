@@ -52,10 +52,10 @@ forms.forEach(function(form) {
 
 // #region author popup
 const popup = document.querySelector(".author-popup"),
-      moreInfo = document.querySelector(".meer-info");
+      moreInfo = document.querySelector(".meer-info"),
+      target = document.popup.scrollHeight;
 
 function scroll() {
-  
 }
 
 console.log(target)
