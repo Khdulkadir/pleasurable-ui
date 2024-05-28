@@ -155,11 +155,11 @@ fieldset {
   border: none;
 }
 
-fieldset:has(:focus-visible){
+fieldset:has(:focus-visible) {
   outline: solid .2em var(--border-fieldset-focus);
 }
 
-.meer-info:hover, .popup-label {
+.popup-label {
   cursor: pointer;
 }
 
@@ -167,9 +167,15 @@ fieldset:has(:focus-visible){
   fill: var(--accent-color1);
 }
 
-.meer-info:checked ~ .author-popup{
+.meer-info:checked ~ .author-popup {
   visibility: visible;
   animation: popup .3s;
+}
+
+.meer-info:checked ~ .popup-label svg {
+  background-color: var(--accent-color1);
+  fill: var(--background-color);
+  border-radius: 20px;
 }
 /* #endregion Popup */
 

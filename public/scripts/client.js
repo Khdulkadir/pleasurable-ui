@@ -49,3 +49,10 @@ forms.forEach(function(form) {
     event.preventDefault();
   });
 });
+
+// #region author popup
+const target = document.querySelector(".author-popup");
+
+
+console.log(target)
+// #endregion author popup
