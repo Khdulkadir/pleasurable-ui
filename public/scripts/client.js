@@ -4,7 +4,8 @@ const nav = document.querySelector("nav.categories-nav"),
       header2 = document.querySelector(".header2"),
       header3 = document.querySelector(".header3"),
       progressBar = document.querySelector("#myBar"),
-      forms = document.querySelectorAll("form#like-form");
+      forms = document.querySelectorAll("form#like-form"),
+      likeCount = document.getElementById("like-count");
 
 menuButton.addEventListener("click", () => {
     nav.classList.toggle("closed");
@@ -52,7 +53,8 @@ document.querySelectorAll('.fade-in').forEach(function(fadeElement) {
 // #region Code voor post form
 forms.forEach(function(form) {
   form.addEventListener('submit', function (event) {
-    document.getElementById("like-count").classList.add("loading");
+    const timeout = setTimeout(() => {document.getElementById("like-count").classList.add("loading")}, 500);
+    likeCount.innerText++;
     const data = new FormData(this);
     // data.append('enhanced', true);
 
@@ -66,13 +68,13 @@ forms.forEach(function(form) {
     .then(function(responseHTML) {
       const parser = new DOMParser();
       const responseDOM = parser.parseFromString(responseHTML, 'text/html');
-      const likeCount = responseDOM.querySelector('span#like-count');
+      const newLikeCount = responseDOM.getElementById('like-count');
 
-      const currentLikeCount = document.querySelector('span#like-count');
-      if (currentLikeCount && likeCount) {
-        currentLikeCount.innerHTML = likeCount.innerHTML;
+      if (likeCount && newLikeCount) {
+        likeCount.innerHTML = newLikeCount.innerHTML;
       }
       document.getElementById("like-count").classList.remove("loading");
+      clearTimeout(timeout);
       document.getElementById("like-count").classList.add("success");
       document.getElementById("like-icon").classList.add("success");
     });
