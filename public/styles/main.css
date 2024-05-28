@@ -115,7 +115,7 @@ header {
   display: none;
   background-color: black;
   border-bottom: var(--border);
-  height: 2.5rem;
+  height: 3.5rem;
 }
 
 .header1 a {
@@ -447,8 +447,8 @@ header:has(.categories-nav.closed) .menu-button {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 20px;
-  background-color: #fff;
+  padding: 30px;
+  background-color: var(--article-background-color);
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -459,9 +459,8 @@ header:has(.categories-nav.closed) .menu-button {
   top: 10px;
   right: 10px;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 40px;
 }
-
 
 input[type="email"] {
   width: 100%;
@@ -471,11 +470,24 @@ input[type="email"] {
   border-radius: 3px;
 }
 
-.newsletter-popup {z-index: 1;}
+.newsletter-popup {
+  z-index: 1;
+  opacity: 1;
+}
+
+.newsletter-popup h2, .newsletter-popup p {
+  margin: 10px 0;
+}
+
+.newsletter-popup form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
 #newsletter-popup {
   padding: 10px 20px;
-  background-color: #007bff;
   color: #fff;
   border: none;
   border-radius: 3px;
@@ -483,21 +495,32 @@ input[type="email"] {
   margin-left: 10px;
 }
 
-#subscribeBtn {
-  padding: 10px 20px;
-  background-color: #007bff;
+.subscribe-button {
+  padding: 5px 15px;
+  background-color: #D5302D;
   color: #fff;
   border: none;
   border-radius: 3px;
   cursor: pointer;
+  margin-right: 0.5rem;
+  fill: #fff;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: 0.3s;
 }
 
-#subscribeBtn:hover {
-  background-color: #0056b3;
+.subscribe-button:hover {
+  opacity: 0.5;
+}
+
+#popup-checkbox {
+  opacity: 0;
 }
 
 /* Show popup when checkbox is checked */
 .popup-checkbox:checked ~ .newsletter-popup {
   display: block;
 }
+
 /* #endregion nieuwsbrief */
