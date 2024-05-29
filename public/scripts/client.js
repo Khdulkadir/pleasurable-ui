@@ -4,6 +4,8 @@ const nav = document.querySelector("nav.categories-nav"),
       header3 = document.querySelector(".header3"),
       forms = document.querySelectorAll('form#like-form'),
       popup = document.querySelector(".author-popup"),
+      content = document.querySelector(".article-content"),
+      excerpt = document.querySelector(".article-excerpt"),
       moreInfo = document.querySelector(".meer-info");
 
 menuButton.addEventListener("click", () => {
@@ -53,7 +55,15 @@ forms.forEach(function(form) {
 });
 
 // #region author popup
+content.addEventListener("click", uncheck)
+excerpt.addEventListener("click", uncheck)
 moreInfo.addEventListener("click", scroll)
+
+function uncheck() {
+  if(moreInfo.checked){
+    moreInfo.checked = false;
+  }
+}
 
 function scroll() {
   if (moreInfo.checked) {
