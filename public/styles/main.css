@@ -71,7 +71,7 @@
   --font-main: Tiempos, 'Source serif 4';
   --font-alt: Inter, 'sans-serif';
 
-  --darkmode-transition: filter 0.5s, color 0.5s, background-color 0.5s, border-color 0.5s;
+  --darkmode-transition: filter 0.2s, color 0.2s, background-color 0.2s, border-color 0.2s;
 }
 
 * {
