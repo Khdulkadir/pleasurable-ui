@@ -1,3 +1,17 @@
+<%
+let articleContent = article[0].content.rendered;
+
+// zoek de iframe door middel van indexOf, en seleceer met substring
+const iframeStart = articleContent.indexOf("<iframe"); // als er geen iframe is returnt indexOf -1
+const iframeEnd = articleContent.indexOf("</iframe>") + 9; // voeg 9 toe om de sluittag ook mee te nemen
+const iframe = articleContent.substring(iframeStart, iframeEnd);
+
+if (iframeStart > -1) { // als er geen iframe is returnt indexOf -1
+  // haal de iframe weg uit de article content door alles te laden behalve de iframe
+  articleContent = articleContent.substring(0, iframeStart) + articleContent.substring(iframeEnd);
+}
+%>
+
 <%- include('./partials/head') %>
   <link rel="stylesheet" href="/styles/article.css">
   <%- article[0].yoast_head %>
@@ -10,12 +24,17 @@
     <div class="article-page-container">
       <article class="article-page">
         <div class="article-featured-image-container">
-          <img class="article-featured-image"
+          <% if (iframeStart > -1) { %>
+            <%- iframe %>
+          <% } else { %>
+            <img
+            class="article-featured-image"
             src="<%= article[0].yoast_head_json.og_image[0].url %>"
             alt="<%= article[0].yoast_head_json.schema['@graph'][2].caption %>"
             width="<%= article[0].yoast_head_json.og_image[0].width %>"
             height="<%= article[0].yoast_head_json.og_image[0].height %>"
             />
+          <% } %>
         </div>
 
         <div class="article-category-date-like-container">
@@ -50,32 +69,9 @@
         
         <div class="article-author-reading-time-container">
           <% if (author[0]) { %>
-            <div class="article-author">Auteur:
+            <p class="article-author">Auteur:
               <a href="/auteur/<%= author[0].slug %>"><strong><%= author[0].name %></strong></a>
-
-              <fieldset>
-                <input type="checkbox" id="meer-info" class="meer-info" />
-                <label for="meer-info" class="popup-label">
-                  <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="23" height="23" viewBox="0 0 24 24">
-                    <path d="M 12 2 C 6.4889971 2 2 6.4889971 2 12 C 2 17.511003 6.4889971 22 12 22 C 17.511003 22 22 17.511003 22 12 C 22 6.4889971 17.511003 2 12 2 z M 12 4 C 16.430123 4 20 7.5698774 20 12 C 20 16.430123 16.430123 20 12 20 C 7.5698774 20 4 16.430123 4 12 C 4 7.5698774 7.5698774 4 12 4 z M 11 7 L 11 9 L 13 9 L 13 7 L 11 7 z M 11 11 L 11 17 L 13 17 L 13 11 L 11 11 z"></path>
-                  </svg>
-                </label>
-
-                <div class="author-popup">
-                  <picture>
-                    <% if (author[0].avatar_urls) { %>
-                      <img src="<%= author[0].avatar_urls["96"] %>" alt="avatar van <%= author[0].name %>" width="96" height="96">
-                    <% } else { %>
-                      <img src="/assets/errorimg.png" alt="kan avatar niet laden" width="96" height="96">
-                    <% } %>
-                  </picture> 
-                  <section>
-                    <h3><%= author[0].name %></h3>
-                    <p><%- author[0].description %></p>
-                  </section>
-                </div>
-              </fieldset>
-            </div> 
+            </p>
           <% } else { %>
             <p class="article-author">Auteur: 
               <strong><%= article[0].yoast_head_json.author %></strong>
@@ -87,7 +83,7 @@
         </div>
 
         <div class="article-content">
-          <%- article[0].content.rendered %>
+          <%- articleContent %>
         </div>
       </article>
     </div>

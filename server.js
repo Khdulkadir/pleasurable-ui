@@ -101,7 +101,13 @@ app.get("/artikel/:slug", (request, response) => {
 
     eval(date.get('full-date'))
 
-    response.render("article", {article: postData, like: likeData.data, categories: categoriesData, category: filterCategorie, author: filterAuthor})
+    if (postData[0].categories.some(category => category === 590)){ 
+      response.render("gallery", {article: postData, like: likeData.data, categories: categoriesData, category: filterCategorie, author: filterAuthor})
+    } else if (postData[0].categories.some(category => category === 3211)){
+      response.render("podcast", {article: postData, like: likeData.data, categories: categoriesData, category: filterCategorie, author: filterAuthor})
+    } else {
+      response.render("article", {article: postData, like: likeData.data, categories: categoriesData, category: filterCategorie, author: filterAuthor})
+    }
   })
 })
 
@@ -163,7 +169,10 @@ app.get('/auteur/:slug', function (request, response) {
 // Search
 app.get('/search', (request, response) => {
   const searchterm = request.query.q
-  fetchJson(`${postsUrl}?search=${searchterm}`).then((posts) => {
-      response.render('search', {posts, categories: categoriesData, searchterm})
+  fetchJson(`${postsUrl}?search=${searchterm}`).then((postData) => {
+    for (var i=0; i < postData.length; i++) {
+      eval(date.get('day-month-year'))
+    }
+      response.render('search', {posts: postData, categories: categoriesData, searchterm})
   })
 })

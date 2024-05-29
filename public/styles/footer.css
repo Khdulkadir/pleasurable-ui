@@ -71,7 +71,7 @@ footer {
   transition: 0.3s;
   
   &:hover {
-    font-weight: bold;
+    color: var(--accent-color1);
     transition: 0.3s;
   }
 }
@@ -119,7 +119,7 @@ footer {
   transition: 0.3s;
   
   &:hover {
-    color: var(--alt-text-color);
+    color: var(--accent-color1);
   }
 }
 

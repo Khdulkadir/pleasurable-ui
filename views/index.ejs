@@ -1,6 +1,4 @@
 <%- include('./partials/head') %>
-<link rel="stylesheet" href="/styles/main.css">
-<link rel="stylesheet" href="/styles/footer.css">
 <link rel="stylesheet" href="/styles/index.css">
 
 <title>Red Pers - Podium voor publiek</title>
@@ -12,7 +10,7 @@
     <div class="main-container">
       <a class="article-link" href="artikel/<%= featured[0].slug%>">
         <article class="main-article">
-          <div class="article-content-container">
+          <div class="article-content-container fade-in">
             <div class="article-date-container">
               <p class="article-date"><%= featured[0].date %></p>
             </div>
@@ -26,7 +24,7 @@
             </div>
           </div>
 
-          <div class="article-image-container">
+          <div class="article-image-container fade-in">
             <img class="article-featured-image"
                 src="<%= featured[0].yoast_head_json.og_image[0].url%>"
                 width="<%= featured[0].yoast_head_json.og_image[0].width%>"
@@ -42,7 +40,7 @@
     <div class="sub-article-container">
     <% for (var i = 1; i <= 3; i++) { %>
       <a class="article-link" href="artikel/<%= featured[i].slug%>">
-        <article class="sub-article">
+        <article class="sub-article fade-in">
           <div class="sub-article-featured-image-container">
             <img loading="lazy" class="sub-article-featured-image"
             src="<%= featured[i].yoast_head_json.og_image[0].url %>"
@@ -83,7 +81,7 @@
     <div class="sub-article-container">
     <% posts[index].forEach(article => { %>
       <a class="article-link" href="artikel/<%= article.slug %>">
-        <article class="sub-article">
+        <article class="sub-article fade-in">
           <div class="sub-article-featured-image-container">
             <img loading="lazy" class="sub-article-featured-image"
               src="<%= article.yoast_head_json.og_image[0].url %>"
