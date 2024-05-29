@@ -119,8 +119,6 @@ header {
   display: none;
   background-color: black;
   border-bottom: var(--border);
-  padding-right: 6rem;
-  gap: 1.5rem;
   height: 3.5rem;
 }
 
