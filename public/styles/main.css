@@ -555,12 +555,16 @@ header:has(.categories-nav.closed) .menu-button {
 
 #popup-checkbox {
   opacity: 0;
+  position: absolute;
 }
 
 .popup-checkbox:checked ~ .newsletter-popup {
   display: block;
 }
 
+.header1 fieldset {
+  margin-left: 20px;
+}
 fieldset {
   border: none;
 }
