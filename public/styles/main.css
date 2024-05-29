@@ -155,6 +155,11 @@ header {
   fill: var(--text-color);
 }
 
+.search-text {
+  text-transform: uppercase;
+  font-family: var(--font-alt);
+}
+
 .date-and-tagline {
   display: none;
   vertical-align: middle;
