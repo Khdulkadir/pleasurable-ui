@@ -26,7 +26,7 @@ darkModeMediaQuery.addEventListener("change", (e) => {
 
 // Set dark-mode class on body if darkMode is true and pick icon
 if (darkMode) {
-  document.root.classList.add("dark-mode");
+  root.classList.add("dark-mode");
   darkIcon.setAttribute("display", "none");
 } else {
   lightIcon.setAttribute("display", "none");
