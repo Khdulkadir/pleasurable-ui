@@ -1,17 +1,53 @@
-main{
-  margin: 0 auto;
+main {
+  margin: 0 3rem;
   width: fit-content;
+  max-width: 800px;
+  margin-top: 6rem;
 }
 
+/* #region About */
+.about-author {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-author img {
+  width: 200px;
+  height: 200px;
+}
+
+.about-author h1{
+  font-family: var(--font-main);
+  font-size: 38px;
+}
+
+.about-author .author-bio {
+  font-family: var(--font-alt);
+  max-width: var(--line-length);
+  padding: 1rem 0;
+}
+/* #endregion About */
+
+/* #region Populair */
+.populair {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.populair h2 {
+  width: 100%;
+}
+/* #endregion Populair */
+
 /* #region Cards */
-.readmore-card{
+.readmore-card {
   background-color: var(--color-light);
   margin: 1rem;
   border: var(--border);
-  max-width: 250px;
+  max-width: 300px;
 }
 
-.readmore-card img{
+.readmore-card img {
   width: var(--thumbnail-width);
   height: var(--thumbnail-height);
   object-fit: cover;
@@ -19,8 +55,37 @@ main{
   border-bottom: var(--border);
 }
 
-.readmore-card h2{
-  padding: 0 var(--padding);
+.readmore-card h3 {
+  font-family: var(--font-main);
+  font-size: 24px;
+  padding: 0 15px;
   height: var(--thumbnail-height);
 }
+
+.readmore-card p {
+  font-family: var(--font-alt);
+  color: var(--alt-text-color);
+  padding: 0 15px;
+}
 /* #endregion Cards */
+
+@media only screen and (min-width: 768px) {
+  main {
+    margin: var(--margin-center);
+    margin-top: 6rem;
+  }
+
+  .about-author {
+    flex-direction: row;
+  }
+
+  .about-author .author-info {
+    padding-left: 1rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  main {
+    margin: var(--margin-center);
+  } 
+}

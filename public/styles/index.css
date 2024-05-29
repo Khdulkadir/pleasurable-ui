@@ -251,7 +251,7 @@
   }
 
   .sub-article-title {
-    font-size: 16px;
+    font-size: 20px;
   }
 
   .sub-article-title-container {
@@ -305,16 +305,16 @@
   }
 
   .sub-article-title {
-    font-size: 13px;
+    font-size: 20px;
     padding: 10px 0;
   }
 
   .article-title {
-    font-size: 16px;
+    font-size: 24px;
   }
 
   .excerpt {
-    font-size: 13px;
+    font-size: 18px;
   }
 
   .author-reading-time-date-container {
@@ -329,7 +329,7 @@
   }
 
   .sub-article-section-heading {
-    font-size: 13px;
+    font-size: 20px;
   }
 
   .sub-article-date-mobile {

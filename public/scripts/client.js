@@ -4,7 +4,50 @@ const nav = document.querySelector("nav.categories-nav"),
       header2 = document.querySelector(".header2"),
       header3 = document.querySelector(".header3"),
       progressBar = document.querySelector("#myBar"),
-      forms = document.querySelectorAll("form#like-form");
+      forms = document.querySelectorAll("form#like-form"),
+      popup = document.querySelector(".author-popup"),
+      content = document.querySelector(".article-content"),
+      excerpt = document.querySelector(".article-excerpt"),
+      moreInfo = document.querySelector(".meer-info"),
+      darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)"),
+      lightIcon = document.getElementById("light-icon"),
+      darkIcon = document.getElementById("dark-icon");
+
+let darkMode = darkModeMediaQuery.matches;
+
+darkModeMediaQuery.addEventListener("change", (e) => {
+  if (e.matches) {
+    darkMode = true;
+  } else {
+    darkMode = false;
+  }
+});
+
+// Set dark-mode class on body if darkMode is true and pick icon
+if (darkMode) {
+  document.body.classList.add("dark-mode");
+  darkIcon.setAttribute("display", "none");
+} else {
+  lightIcon.setAttribute("display", "none");
+}
+
+// Toggle dark mode on button click
+function toggleDarkMode() {
+  // Toggle darkMode variable
+  darkMode = !darkMode;
+
+  // Toggle dark-mode class on body
+  document.body.classList.toggle("dark-mode");
+
+  // Toggle light and dark icons
+  if (darkMode) {
+    lightIcon.setAttribute("display", "block");
+    darkIcon.setAttribute("display", "none");
+  } else {
+    lightIcon.setAttribute("display", "none");
+    darkIcon.setAttribute("display", "block");
+  }
+}
 
 menuButton.addEventListener("click", () => {
     nav.classList.toggle("closed");
@@ -81,17 +124,34 @@ forms.forEach(function(form) {
 });
 // #endregion Code voor post form
 
+// #region author popup
+content.addEventListener("click", uncheck)
+excerpt.addEventListener("click", uncheck)
+moreInfo.addEventListener("click", scroll)
+
+function uncheck() {
+  if(moreInfo.checked){
+    moreInfo.checked = false;
+  }
+}
+
+function scroll() {
+  if (moreInfo.checked) {
+    popup.scrollIntoView({behavior: "smooth"});
+  } 
+}
+// #endregion author popup
 
 // #region Code voor nieuwsbrief popup
   const checkbox = document.getElementById('popup-checkbox');
-  const popup = document.querySelector('.newsletter-popup');
+  const popupNieuwsbrief = document.querySelector('.newsletter-popup');
 
   checkbox.addEventListener('change', () => {
     if (checkbox.checked) {
-      popup.classList.add('open');
+      popupNieuwsbrief.classList.add('open');
     }
     else {
-      popup.classList.remove('open');
+      popupNieuwsbrief.classList.remove('open');
     }
   });
 // #endregion Code voor nieuwsbrief popup
