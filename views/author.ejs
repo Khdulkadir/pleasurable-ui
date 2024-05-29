@@ -8,34 +8,44 @@
   <%- include('./partials/header') %>
 
   <main>
-    <h2><%= author[0].name %></h2>
+    <div class="about-author">
+      <picture>
+        <% if (author[0].avatar_urls) { %>
+          <img src="<%= author[0].avatar_urls["96"] %>" alt="avatar van <%= author[0].name %>" width="96" height="96">
+        <% } else {%>
+          <img src="/assets/errorimg.png" alt="kan avatar niet laden" width="96" height="96">
+        <% } %>
+      </picture>
 
-    <% if (author[0].avatar_urls) { %>
-      <img src="<%= author[0].avatar_urls["96"] %>" alt="avatar van <%= author[0].name %>" width="96" height="96">
-    <% } else {%>
-      <img src="/assets/images/errorimg.png" alt="kan avatar niet laden" width="96" height="96">
-    <% } %>
-
-    <% if (posts[0]) { %>
-      <% posts.forEach(function(post) { %>
-        <article class="readmore-card">
-              
-          <% if (post.jetpack_featured_media_url[0]) { %>
-            <img src="<%= post.yoast_head_json.og_image[0].url %>" alt="" width="<%= post.yoast_head_json.og_image[0].width %>" height="<%= post.yoast_head_json.og_image[0].height  %>">
-          <% } else { %>
-            <img src="/assets/images/errorimg.png" alt="Kan foto niet laden">
-          <% } %>
-      
-          <a href="/artikel/<%= post.slug %>">
-            <h2><%- post.title.rendered %></h2>
-            <p class="date"><%- post.date %></p>
-          </a>
-      
-        </article>
-      <% }) %> 
-    <% } else {%>
-      <h3> Er zijn geen artiekelen</h3>
-    <% } %>
+      <section class="author-info">
+        <h1><%= author[0].name %></h1>
+        <p class="author-bio"><%= author[0].description %></p>
+      </section>
+    </div>
+    
+    <section class="populair">
+      <h2>Populair</h2>
+      <% if (posts[0]) { %>
+        <% posts.forEach(function(post) { %>
+          <article class="readmore-card">
+                
+            <% if (post.jetpack_featured_media_url[0]) { %>
+              <img src="<%= post.yoast_head_json.og_image[0].url %>" alt="" width="<%= post.yoast_head_json.og_image[0].width %>" height="<%= post.yoast_head_json.og_image[0].height  %>">
+            <% } else { %>
+              <img src="/assets/errorimg.png" alt="Kan foto niet laden">
+            <% } %>
+        
+            <a class="card-link" href="/artikel/<%= post.slug %>">
+              <h3><%- post.title.rendered %></h3>
+              <p class="date"><%- post.date %></p>
+            </a>
+        
+          </article>
+        <% }) %> 
+      <% } else {%>
+        <h3> Er zijn geen artiekelen</h3>
+      <% } %>
+    </section>
   </main>
   
 <%- include('./partials/footer') %>

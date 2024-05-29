@@ -3,8 +3,13 @@ const nav = document.querySelector("nav.categories-nav"),
       menuButton = document.querySelector(".menu-button"),
       header2 = document.querySelector(".header2"),
       header3 = document.querySelector(".header3"),
-      progressBar = document.querySelector("#myBar"),
-      forms = document.querySelectorAll("form#like-form");
+      forms = document.querySelectorAll('form#like-form'),
+      popup = document.querySelector(".author-popup"),
+      content = document.querySelector(".article-content"),
+      excerpt = document.querySelector(".article-excerpt"),
+      moreInfo = document.querySelector(".meer-info"),
+      progressBar = document.querySelector("#myBar");
+
 
 menuButton.addEventListener("click", () => {
     nav.classList.toggle("closed");
@@ -80,3 +85,21 @@ forms.forEach(function(form) {
   });
 });
 // #endregion Code voor post form
+
+// #region author popup
+content.addEventListener("click", uncheck)
+excerpt.addEventListener("click", uncheck)
+moreInfo.addEventListener("click", scroll)
+
+function uncheck() {
+  if(moreInfo.checked){
+    moreInfo.checked = false;
+  }
+}
+
+function scroll() {
+  if (moreInfo.checked) {
+    popup.scrollIntoView({behavior: "smooth"});
+  } 
+}
+// #endregion author popup
