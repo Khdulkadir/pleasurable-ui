@@ -1,5 +1,6 @@
-h2{
+.category-title {
   text-align: center;
+  font-family: var(--font-main);
   font-size: 2rem;
   padding: 3rem 0;
 }
@@ -22,6 +23,10 @@ h2{
 .results article p.date{
   font-family: var(--font-alt);
   font-weight: 300;
+}
+
+.results article h3 {
+  font-family: var(--font-main);
 }
 
 .results article img{

@@ -45,9 +45,8 @@ main .search-form {
     font-weight: 400;
 }
 
-h3 {
-    text-align: center;
-    margin: 2rem;
+.results article h3 {
+  font-family: var(--font-main);
 }
 
 @media screen and (min-width: 300px) and (max-width:900px) {
