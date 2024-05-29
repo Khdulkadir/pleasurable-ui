@@ -254,6 +254,10 @@ fieldset:has(:focus-visible) {
   fill: var(--text-color);
 }
 
+#like-count{
+  color: var(--text-color);
+}
+
 #like-count.success {
   color: var(--accent-color1);
   font-weight: 700;
