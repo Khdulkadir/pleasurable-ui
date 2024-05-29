@@ -561,6 +561,14 @@ header:has(.categories-nav.closed) .menu-button {
   display: block;
 }
 
+fieldset {
+  border: none;
+}
+
+fieldset:has(:focus-visible) {
+  outline: solid .2em var(--border-fieldset-focus);
+}
+
 @keyframes fancyOpen {
   0% {
     opacity: 0;

@@ -151,13 +151,8 @@
   left: -9999em;
 }
 
-fieldset {
+.author-popup-fieldset {
   height: 18px;
-  border: none;
-}
-
-fieldset:has(:focus-visible) {
-  outline: solid .2em var(--border-fieldset-focus);
 }
 
 .popup-label {
