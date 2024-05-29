@@ -93,7 +93,7 @@
   display: flex;
 }
 
-.article-author a {
+.article-author strong {
   margin-left: .3rem;
   margin-right: 1rem;
 }
