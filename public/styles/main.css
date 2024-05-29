@@ -120,8 +120,8 @@ header {
   background-color: black;
   border-bottom: var(--border);
   padding-right: 6rem;
-  height: 2.5rem;
   gap: 1.5rem;
+  height: 3.5rem;
 }
 
 .header1 a {
@@ -221,7 +221,7 @@ header {
   border: var(--border);
   display: flex;
   flex-direction: column;
-  margin-bottom: 1rem;
+  margin: 1rem 0;
   padding: 2rem;
   gap: 3rem;
   align-items: center;
@@ -402,7 +402,6 @@ header:has(.categories-nav.closed) .menu-button {
 
         .categories {
           height: unset;
-          width: 100%;
           display: flex;
           justify-content: center;
           flex-direction: row;
@@ -472,3 +471,101 @@ header:has(.categories-nav.closed) .menu-button {
   }
 }
 /* #endregion Media */
+
+/* #startregion nieuwsbrief */
+.newsletter-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 25px;
+  background-color: var(--article-background-color);
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 40px;
+}
+
+.newsletter-popup form input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.newsletter-popup {
+  z-index: 1;
+  opacity: 1;
+}
+
+.newsletter-popup h2, .newsletter-popup p {
+  margin: 10px 0;
+}
+
+.newsletter-popup form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#newsletter-popup {
+  padding: 10px 20px;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.subscribe-button {
+  padding: 5px 15px;
+  background-color: #D5302D;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  fill: #fff;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: 0.3s;
+}
+
+.subscribe-button:hover {
+  opacity: 0.5;
+}
+
+#popup-checkbox {
+  opacity: 0;
+}
+
+.popup-checkbox:checked ~ .newsletter-popup {
+  display: block;
+}
+
+@keyframes fancyOpen {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) rotate(-10deg) translate(-50%, -50%);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg) translate(-50%, -50%);
+  }
+}
+.newsletter-popup.open {
+  animation: fancyOpen 0.6s forwards;
+}
+
+/* #endregion nieuwsbrief */
