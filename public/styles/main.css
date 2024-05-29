@@ -126,6 +126,14 @@ header {
   color: white;
 }
 
+line#ray {
+  color: white;
+}
+
+#dark-icon, #light-icon {
+  margin-right: 10px;
+}
+
 .header1 a:hover{
   color: var(--alt-text-color);
 }

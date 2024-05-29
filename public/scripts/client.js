@@ -11,6 +11,7 @@ const nav = document.querySelector("nav.categories-nav"),
       moreInfo = document.querySelector(".meer-info"),
       darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)"),
       lightIcon = document.getElementById("light-icon"),
+      root = document.querySelector(":root"),
       darkIcon = document.getElementById("dark-icon");
 
 let darkMode = darkModeMediaQuery.matches;
@@ -25,7 +26,7 @@ darkModeMediaQuery.addEventListener("change", (e) => {
 
 // Set dark-mode class on body if darkMode is true and pick icon
 if (darkMode) {
-  document.body.classList.add("dark-mode");
+  document.root.classList.add("dark-mode");
   darkIcon.setAttribute("display", "none");
 } else {
   lightIcon.setAttribute("display", "none");
