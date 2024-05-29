@@ -142,7 +142,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2.5rem 2rem;
+  padding: 1.5rem 2rem;
 }
 
 .newsletter-search {
@@ -362,6 +362,7 @@ header:has(.categories-nav.closed) .menu-button {
     .header2 {
       width: calc(100% - 4rem);
       max-width: calc(80rem - 4rem);
+      padding: 2.5rem 2rem;
 
       .date-and-tagline {
         display: block;
