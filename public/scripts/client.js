@@ -124,6 +124,20 @@ forms.forEach(function(form) {
 });
 // #endregion Code voor post form
 
+// #region Code voor nieuwsbrief popup
+  const checkbox = document.getElementById('popup-checkbox');
+  const popupNieuwsbrief = document.querySelector('.newsletter-popup');
+
+  checkbox.addEventListener('change', () => {
+    if (checkbox.checked) {
+      popupNieuwsbrief.classList.add('open');
+    }
+    else {
+      popupNieuwsbrief.classList.remove('open');
+    }
+  });
+// #endregion Code voor nieuwsbrief popup
+
 // #region author popup
 content.addEventListener("click", uncheck)
 excerpt.addEventListener("click", uncheck)
@@ -142,16 +156,4 @@ function scroll() {
 }
 // #endregion author popup
 
-// #region Code voor nieuwsbrief popup
-  const checkbox = document.getElementById('popup-checkbox');
-  const popupNieuwsbrief = document.querySelector('.newsletter-popup');
 
-  checkbox.addEventListener('change', () => {
-    if (checkbox.checked) {
-      popupNieuwsbrief.classList.add('open');
-    }
-    else {
-      popupNieuwsbrief.classList.remove('open');
-    }
-  });
-// #endregion Code voor nieuwsbrief popup
