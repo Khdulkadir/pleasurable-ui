@@ -120,7 +120,6 @@ header {
   display: none;
   background-color: black;
   height: 3.5rem;
-  border-bottom: var(--border);
 }
 
 .header1 a {
@@ -499,6 +498,8 @@ header:has(.categories-nav.closed) .menu-button {
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   text-align: center;
+  z-index: 5;
+  opacity: 1;
 }
 
 .close-btn {
@@ -515,11 +516,6 @@ header:has(.categories-nav.closed) .menu-button {
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 3px;
-}
-
-.newsletter-popup {
-  z-index: 1;
-  opacity: 1;
 }
 
 .newsletter-popup h2, .newsletter-popup p {
