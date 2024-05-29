@@ -315,12 +315,12 @@ header:has(.categories-nav.closed) .menu-button {
   .fade-in {
       opacity: 0;
       transform: translateY(20px);
-      transition: opacity 0.6s, transform 0.6s, var(--darkmode-transition);
+      transition: opacity 0.6s, transform 0.6s
   }
 
   .fade-in.visible {
       opacity: 1;
-      transform: translateY(0), var(--darkmode-transition);
+      transform: translateY(0);
   }
 }
 /* #endregion fadein */
