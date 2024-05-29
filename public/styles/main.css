@@ -120,6 +120,7 @@ header {
   display: none;
   background-color: black;
   height: 3.5rem;
+  border-bottom: var(--border);
 }
 
 .header1 a {
@@ -370,7 +371,7 @@ header:has(.categories-nav.closed) .menu-button {
     }
 
     .header1 {
-      width: 1200px;
+      padding-right: calc(50vw - 620px);
       display: flex;
       justify-content: end;
       align-items: center;
