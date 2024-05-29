@@ -99,6 +99,10 @@ a:hover {
   color: var(--accent-color1);
 }
 
+a:hover svg {
+  fill: var(--accent-color1);
+}
+
 /* #region Header */
 header {
   top: 0;
@@ -435,6 +439,10 @@ header:has(.categories-nav.closed) .menu-button {
     color: var(--alt-text-color);
   }
 
+  a:hover svg {
+    fill: var(--alt-text-color);
+  }
+
   .footer-item a:hover {
     color: var(--alt-text-color);
   }
@@ -459,6 +467,10 @@ header:has(.categories-nav.closed) .menu-button {
 
   a:hover {
     color: var(--alt-text-color);
+  }
+
+  a:hover svg {
+    fill: var(--alt-text-color);
   }
 
   .footer-item a:hover {
