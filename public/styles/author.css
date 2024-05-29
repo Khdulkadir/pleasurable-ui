@@ -1,11 +1,14 @@
 main {
   margin: 0 3rem;
   width: fit-content;
+  max-width: 800px;
+  margin-top: 6rem;
 }
 
 /* #region About */
 .about-author {
-  display: grid;
+  display: flex;
+  flex-direction: column;
 }
 
 .about-author img {
@@ -20,6 +23,8 @@ main {
 
 .about-author .author-bio {
   font-family: var(--font-alt);
+  max-width: var(--line-length);
+  padding: 1rem 0;
 }
 /* #endregion About */
 
@@ -63,3 +68,24 @@ main {
   padding: 0 15px;
 }
 /* #endregion Cards */
+
+@media only screen and (min-width: 768px) {
+  main {
+    margin: var(--margin-center);
+    margin-top: 6rem;
+  }
+
+  .about-author {
+    flex-direction: row;
+  }
+
+  .about-author .author-info {
+    padding-left: 1rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  main {
+    margin: var(--margin-center);
+  } 
+}
