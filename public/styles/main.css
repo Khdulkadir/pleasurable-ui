@@ -120,7 +120,6 @@ header {
   border-bottom: var(--border);
   padding-right: 6rem;
   height: 2.5rem;
-  display: flex;
   gap: 1.5rem;
 }
 
