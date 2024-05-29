@@ -30,7 +30,7 @@
   font-family: "Tiempos";
   font-style: normal;
   font-weight: 400;
-  src: url(/assets/TiemposText-Regular.ttf) format("ttf");
+  src: url("/assets/fonts/TiemposText-Regular.woff2") format("woff2");
 }
 
 /* TiemposHeadline */
@@ -39,7 +39,7 @@
   font-family: "Tiempos";
   font-style: normal;
   font-weight: 700;
-  src: url(/assets/TiemposHeadline-Medium.ttf) format("ttf");
+  src: url("/assets/fonts/TiemposHeadline-Medium.woff2") format("woff2");
 }
 /* #endregion Fonts */
 
@@ -51,9 +51,10 @@
   --alt-text-color: #757575;
   --light-border-color: #9b9b9b94;
   --accent-color1: #D5302D;
-  --accent-color2: #5340e8;
+  --accent-color2: #f4a8a1;
   --accent-color3: #f2d930;
-  --accent-color4: #f9cdc8;
+  --accent-color4: #5340e8;
+  --border-fieldset-focus: #005FCC;
 
   --thumbnail-width: 100%;
   --thumbnail-height: 200px;
@@ -106,7 +107,7 @@ header {
   top: 0;
   width: 100%;
   background-color: var(--background-color);
-  z-index: 1;
+  z-index: 2;
   font-family: var(--font-alt);
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -145,6 +146,12 @@ header {
   padding: 1.5rem 2rem;
 }
 
+.search-form button a, .newsletter {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+}
+
 .newsletter-search {
   display: flex;
   gap: 1rem;
@@ -152,6 +159,11 @@ header {
 
 .newsletter-search svg {
   fill: var(--text-color);
+}
+
+.search-text {
+  text-transform: uppercase;
+  font-family: var(--font-alt);
 }
 
 .date-and-tagline {
@@ -183,7 +195,7 @@ header {
 /* #region Header3 */
 .header3 {
   background-color: var(--background-color);
-  z-index: 1;
+  z-index: 2;
 
   .search-form {
     display: none;
@@ -221,7 +233,8 @@ header {
 }
 
 button {
-  all: unset;
+  border: none;
+  background-color: transparent;
   cursor: pointer;
 }
 
@@ -296,12 +309,6 @@ header:has(.categories-nav.closed) .menu-button {
     transform: translateY(0);
   }
 }
-
-.search-form input {
-  width: 30rem;
-  height: 2.5rem;
-  margin-bottom: 2rem;
-}
 /* #endregion Header */
 
 /* #region fadein */
@@ -346,17 +353,23 @@ header:has(.categories-nav.closed) .menu-button {
   main {
     margin-top: 0;
   }
-
   header {
     display: flex;
     flex-direction: column;
     align-items: center;
-      
-    .header1 {
+    
+    .header1-wrapper {
       width: 100%;
+      background-color: black;
+    }
+
+    .header1 {
+      width: 1200px;
       display: flex;
       justify-content: end;
       align-items: center;
+      margin: 0 auto;
+      max-width: 100%;
     }
 
     .header2 {
@@ -415,9 +428,9 @@ header:has(.categories-nav.closed) .menu-button {
     --alt-text-color: #ff5640;
     --light-border-color: #ffdede;
     --accent-color1: #ECF3B0;
-    --accent-color2: #5340e8;
+    --accent-color2: #823130;
     --accent-color3: #f2d930; /*Mischien als accent color 1 doen*/
-    --accent-color4: #f9cdc8;
+    --accent-color4: #5340e8;
   }
 
   .logo {
@@ -459,4 +472,3 @@ header:has(.categories-nav.closed) .menu-button {
   }
 }
 /* #endregion Media */
-
