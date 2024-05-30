@@ -38,7 +38,7 @@ function toggleDarkMode() {
   darkMode = !darkMode;
 
   // Toggle dark-mode class on body
-  document.body.classList.toggle("dark-mode");
+  root.classList.toggle("dark-mode");
 
   // Toggle light and dark icons
   if (darkMode) {
