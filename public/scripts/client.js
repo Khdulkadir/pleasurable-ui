@@ -139,6 +139,23 @@ forms.forEach(function(form) {
   });
 // #endregion Code voor nieuwsbrief popup
 
+// #region Code voor date format
+
+const articleDate = document.querySelectorAll(".article-date, .sub-article-date");
+
+function formatDate() {
+  articleDate.forEach(articleDate => {
+    const articleDateString = articleDate.innerHTML;
+    const articleDateDay = articleDateString.substring(8, 10);
+    const articleDateMonth = articleDateString.substring(5, 7);
+    const articleDateMonthtoName = articleDateMonth.replace('01', 'januari').replace('02', 'februari').replace('03', 'maart').replace('04', 'april').replace('05', 'mei').replace('06', 'juni').replace('07', 'juli').replace('08', 'augustus').replace('09', 'september').replace('10', 'oktober').replace('11', 'november').replace('12', 'december');
+    articleDate.innerHTML = `${articleDateDay} ${articleDateMonthtoName}`;
+  })
+}
+formatDate();
+
+// #endregion Code voor date format
+
 // #region author popup
 content.addEventListener("click", uncheck)
 excerpt.addEventListener("click", uncheck)
@@ -156,5 +173,3 @@ function scroll() {
   } 
 }
 // #endregion author popup
-
-
