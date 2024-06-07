@@ -2,6 +2,8 @@
 
 # RedPers
 De originele website van Red Pers werkte niet naar behoren. Ik heb daarom deze website omgezet van een Wordpress naar een met de hand gecodeerde website voor een betere snelheid en toegankelijkheid.
+![Screenshot_1](https://github.com/Khdulkadir/pleasurable-ui/assets/144004145/59aaf542-d356-4f3e-acb7-69e1217a0763)
+![Screenshot_2](https://github.com/Khdulkadir/pleasurable-ui/assets/144004145/1529391f-06c2-4a00-9c9c-6928711abc36)
 
 ## Inhoudsopgave
 
@@ -17,7 +19,7 @@ Red Pers is een toegankelijk en inclusief opleidingsplatform voor jonge, aspirer
 
 
 ## Gebruik
-<!-- Bij Gebruik staat de user story, hoe het werkt en wat je er mee kan. -->
+Op de website van Red Pers kan een gebruiker artikelen lezen op alle apparaten. De website is responsive en gemaa
 
 ## Kenmerken
 <!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met JS gedaan en hoe? Misschien heb je iets met NodeJS gedaan, of heb je een framwork of library gebruikt? -->
