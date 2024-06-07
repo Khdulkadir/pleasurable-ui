@@ -24,7 +24,7 @@ Op de website van Red Pers kan een gebruiker artikelen lezen op alle apparaten. 
 Met een pleasureable laag zijn er features toegevoegd om de gebruikservaring te verbeteren. Dit zijn features zoals een darkmode, liken zonder te pagina te herladen en fade in animaties op artikelen.
 
 ## Kenmerken
-<!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met JS gedaan en hoe? Misschien heb je iets met NodeJS gedaan, of heb je een framwork of library gebruikt? -->
+Deze website is gemaakt met EJS, CSS en Javascript met NodeJS en Express. 
 
 ## Installatie
 Fork en clone de repo. Vervolgens doe je npm install in je terminal om de node modules te installeren.
