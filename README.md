@@ -19,15 +19,15 @@ Red Pers is een toegankelijk en inclusief opleidingsplatform voor jonge, aspirer
 
 
 ## Gebruik
-Op de website van Red Pers kan een gebruiker artikelen lezen op alle apparaten. De website is responsive en gemaa
+Op de website van Red Pers kan een gebruiker artikelen lezen op alle apparaten. De website is responsive en gemaakt met progressive enhancement, wat er voor zorgt dat gebruikers met trage internet of een verouderde browser en apparaat ook een functionele website krijgen. Verder kunnen gebruikers ook artikelen liken.
+
+Met een pleasureable laag zijn er features toegevoegd om de gebruikservaring te verbeteren. Dit zijn features zoals een darkmode, liken zonder te pagina te herladen en fade in animaties op artikelen.
 
 ## Kenmerken
 <!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met JS gedaan en hoe? Misschien heb je iets met NodeJS gedaan, of heb je een framwork of library gebruikt? -->
 
 ## Installatie
-Na het forken van de repo maak ik eerst ik alle vereiste bestanden aangemaakt in VS Code. Server.js voor de backend, /views voor de ejs code, /public voor alle assets. Daarna heb ik npm install ingevoerd in de console om Node modules te installeren. Alle backend code heb ik overgenomen van de vorige sprint voor zover dat mogelijk was.
-
-Fork en clone de repo
+Fork en clone de repo. Vervolgens doe je npm install in je terminal om de node modules te installeren.
 
 ## Bronnen
 
