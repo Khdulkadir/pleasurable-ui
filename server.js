@@ -72,11 +72,6 @@ app.get('/', (request, response) => {
     )),
     fetchJson(`${postsUrl}?per_page=4`)
   ]).then(([postData, featuredData]) => {
-
-    // for (var i=0; i < postData.length; i++) {
-    //   eval(date.get('day-month'))
-    // }
-
     response.render('index', { categories: categoriesData, posts: postData, featured: featuredData });
   })
 })
